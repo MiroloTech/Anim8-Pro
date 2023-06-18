@@ -1,3 +1,7 @@
+res://classes/global/util
+res://ui/scene/video_editor/ui/theme
+res://ui/scene/video_editor/ui/fonts/Rubik/static
+res://ui/scene/video_editor/ui/controllers/train
 res://test/scenes
 res://ui/components/editing
 res://test

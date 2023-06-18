@@ -1,0 +1,165 @@
+[gd_scene load_steps=8 format=3 uid="uid://7kyo7hpdhne8"]
+
+[ext_resource type="Script" path="res://ui/scene/project_selection/controllers/Project1Test.gd" id="1_6y5lp"]
+[ext_resource type="Texture2D" uid="uid://csf0sbpvyj1ae" path="res://ui/scene/project_selection/icons/projects/edit-alt.png" id="1_ep3d3"]
+[ext_resource type="Texture2D" uid="uid://tgsdk8l0q3nl" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/trash.png" id="1_ymckp"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/TextureButton.gd" id="3_f5fom"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uqdt"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hciv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4n3wl"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.219608, 0.219608, 0.219608, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="ProjectSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(650, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7uqdt")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="ProjectContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Project1Test" type="Control" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+script = ExtResource("1_6y5lp")
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_6hciv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4n3wl")
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test/MarginContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Content" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test/MarginContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test/MarginContainer/Content/Title"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.772549, 0.772549, 0.772549, 1)
+text = "test project"
+
+[node name="Description" type="Label" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test/MarginContainer/Content/Title"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.513726, 0.513726, 0.513726, 1)
+theme_override_font_sizes/font_size = 10
+text = "Loremp ipsem penis test bla bla bla"
+autowrap_mode = 3
+clip_text = true
+
+[node name="ButtonContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test/MarginContainer/Content"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Edit" type="TextureButton" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test/MarginContainer/Content/ButtonContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("1_ep3d3")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_f5fom")
+
+[node name="Delete" type="TextureButton" parent="CenterContainer/Panel/MarginContainer/ScrollContainer/ProjectContainer/Project1Test/MarginContainer/Content/ButtonContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("1_ymckp")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_f5fom")
+color_base = Color(0.843137, 0.580392, 0.576471, 1)
+color_hovered = Color(0.952941, 0.796078, 0.796078, 1)
+color_pressed = Color(0.678431, 0.305882, 0.313726, 1)
+color_disabled = Color(0.341176, 0.27451, 0.27451, 1)

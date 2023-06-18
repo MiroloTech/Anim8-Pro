@@ -1,2 +1,8 @@
-res://default_bus_layout.tres
-res://test/scenes/draw_test.tscn
+res://ui/scene/project_selection/project_selection.tscn
+res://ui/scene/video_editor/ui/theme/dark.tres
+res://test/run_test.tscn
+res://ui/scene/video_editor/main/scene.tscn
+res://ui/scene/video_editor/ui/controllers/ObjectsList.gd
+res://ui/scene/video_editor/ui/controllers/LayerControl.gd
+res://classes/global/util/strutil.gd
+res://ui/scene/video_editor/ui/controllers/main.gd
