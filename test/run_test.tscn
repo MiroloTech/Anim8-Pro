@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb573fou0ay3f"]
+
+[ext_resource type="Script" path="res://classes/layer/audio/AnimAudio.gd" id="1_n0bwj"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_n0bwj")

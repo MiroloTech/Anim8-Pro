@@ -1,0 +1,13 @@
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://bhqjgb3ekj0ju"]
+
+[sub_resource type="AudioEffectRecord" id="AudioEffectRecord_jlui6"]
+resource_name = "Record"
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_gqhxd"]
+resource_name = "SpectrumAnalyzer"
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectRecord_jlui6")
+bus/0/effect/0/enabled = false
+bus/0/effect/1/effect = SubResource("AudioEffectSpectrumAnalyzer_gqhxd")
+bus/0/effect/1/enabled = true

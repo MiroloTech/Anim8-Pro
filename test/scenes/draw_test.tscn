@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://m8156qs0dybx"]
+
+[ext_resource type="Script" path="res://test/scenes/TEEEST.gd" id="1_6c6mq"]
+
+[node name="DrawTest" type="Node2D"]
+position = Vector2(42, 319)
+script = ExtResource("1_6c6mq")
