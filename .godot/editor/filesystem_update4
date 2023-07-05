@@ -1,8 +1,10 @@
-res://ui/scene/project_selection/project_selection.tscn
-res://ui/scene/video_editor/ui/theme/dark.tres
 res://test/run_test.tscn
+res://ui/scene/video_editor/ui/theme/dark.tres
 res://ui/scene/video_editor/main/scene.tscn
-res://ui/scene/video_editor/ui/controllers/ObjectsList.gd
-res://ui/scene/video_editor/ui/controllers/LayerControl.gd
-res://classes/global/util/strutil.gd
-res://ui/scene/video_editor/ui/controllers/main.gd
+res://ui/components/editing/color_picker_button.tscn
+res://ui/scene/video_editor/ui/controllers/TitleBar.gd
+res://ui/components/editing/color_picker_button.gd
+res://ui/components/editing/color_picker.tscn
+res://classes/global/ui/makeui.gd
+res://ui/scene/video_editor/ui/node_controllers/ObjectsList.gd
+res://test/scenes/TEEEST.gd

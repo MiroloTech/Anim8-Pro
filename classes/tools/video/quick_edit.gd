@@ -32,6 +32,7 @@ func change_speed(video : AnimVideo, speed_factor : float = 1.0) -> AnimVideo:
 	video.warn_edit()
 	var new_fps : int = int(float(video.fps) * speed_factor)
 	video.fps = new_fps
+	# TODO : Change length of track as well
 	
 	return video
 

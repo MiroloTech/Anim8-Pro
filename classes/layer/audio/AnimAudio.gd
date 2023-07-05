@@ -4,17 +4,18 @@ class_name AnimAudio
 var volume : float = 0.0
 var bus : AnimBUS = null
 
-var audio_file : AudioStreamWAV = null
+var original_stream : AudioStreamWAV = null
+var audio_stream : AudioStreamWAV = null
 var audio_player : AudioStreamPlayer = null
 
 func load_file(local_path : String):
 	if not local_path.ends_with(".wav"):
 		pass # Convert to WAV with ffmpeg
-	audio_file = load(local_path)
+	audio_stream = load(local_path)
 	
 	audio_player = AudioStreamPlayer.new()
 	audio_player.volume_db = volume
-	audio_player.stream = audio_file
+	audio_player.stream = audio_stream
 	# audio_player.bus = bus.bus_tag
 
 enum WAVEFORM_DETAIL {
@@ -23,9 +24,9 @@ enum WAVEFORM_DETAIL {
 }
 
 func get_waveform_preview(detail : WAVEFORM_DETAIL = WAVEFORM_DETAIL.HIGH):
-	if audio_file == null: push_error("Tried to acces data from WAV audio stream, that is null..."); return
+	if audio_stream == null: push_error("Tried to acces data from WAV audio stream, that is null..."); return
 	
-	var bytes = audio_file.data
+	var bytes = audio_stream.data
 	var final : Array[float]
 	
 	var floats : Array[float] = []
@@ -42,3 +43,5 @@ func get_waveform_preview(detail : WAVEFORM_DETAIL = WAVEFORM_DETAIL.HIGH):
 	
 	return clipped_final
 
+func warn_edit():
+	original_stream = audio_stream.duplicate()

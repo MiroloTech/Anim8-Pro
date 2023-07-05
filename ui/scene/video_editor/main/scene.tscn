@@ -1,12 +1,12 @@
-[gd_scene load_steps=109 format=3 uid="uid://bvba3g8xgw8yo"]
+[gd_scene load_steps=114 format=3 uid="uid://bybhd73u5gjx6"]
 
 [ext_resource type="Theme" uid="uid://cu7jy5ymgg6os" path="res://ui/scene/video_editor/ui/theme/dark.tres" id="1_2js7r"]
 [ext_resource type="Texture2D" uid="uid://bir2lis7ir8xa" path="res://ui/scene/video_editor/ui/icons/program/brightness.png" id="1_6utsr"]
 [ext_resource type="Texture2D" uid="uid://bek03ffv23vao" path="res://ui/scene/video_editor/ui/icons/program/moon-stars.png" id="1_ht83a"]
 [ext_resource type="Texture2D" uid="uid://dkr1nmdtqvx52" path="res://ui/scene/video_editor/ui/icons/menu/disk.png" id="1_nuh41"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/main.gd" id="1_tx7et"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/TitleBar.gd" id="2_1vjgk"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/main.gd" id="1_r217t"]
 [ext_resource type="Texture2D" uid="uid://b00d08y1gf2bx" path="res://ui/scene/video_editor/ui/icons/video/play.png" id="2_6ynw7"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TitleBar.gd" id="2_ey4tx"]
 [ext_resource type="Texture2D" uid="uid://c0kxsnpf6bn13" path="res://ui/scene/video_editor/ui/icons/files/folder.png" id="2_fydnk"]
 [ext_resource type="Texture2D" uid="uid://bxor42syvsem0" path="res://ui/scene/video_editor/ui/icons/menu/floppy-disk-circle-arrow-right.png" id="2_vjc1q"]
 [ext_resource type="Texture2D" uid="uid://h73egfmyyeqs" path="res://ui/scene/video_editor/ui/icons/video/pause.png" id="3_4tfld"]
@@ -24,21 +24,22 @@
 [ext_resource type="Texture2D" uid="uid://bst12qw8xh8ph" path="res://ui/scene/video_editor/ui/icons/menu/arrow-down-to-square.png" id="8_3cwy0"]
 [ext_resource type="Texture2D" uid="uid://b1uhvvnf7e4nu" path="res://ui/scene/video_editor/ui/icons/menu/microphone.png" id="10_7wi8j"]
 [ext_resource type="Texture2D" uid="uid://g22ofuojkv3t" path="res://ui/scene/video_editor/ui/icons/video/search.png" id="10_eljgy"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/ProjectMenu.gd" id="11_i06st"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/ProjectMenu.gd" id="11_3o52n"]
 [ext_resource type="Texture2D" uid="uid://lxhia4w75md" path="res://ui/scene/video_editor/ui/icons/video/screen.png" id="12_2pv4b"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/TextureButton.gd" id="14_oxq1r"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TextureButton.gd" id="14_ajthw"]
 [ext_resource type="Texture2D" uid="uid://c1jl0sr78vcst" path="res://ui/scene/video_editor/ui/icons/files/cube.png" id="17_3kml0"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/SelectMenu.gd" id="19_uvb8b"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/MenuContainer.gd" id="20_p3fno"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/SelectMenu.gd" id="19_m4v8u"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/MenuContainer.gd" id="20_ycncn"]
+[ext_resource type="Texture2D" uid="uid://b7wwtlrl0my3j" path="res://ui/scene/video_editor/ui/icons/files/sensor.png" id="21_raqap"]
 [ext_resource type="Texture2D" uid="uid://b0m14rohsqbxd" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/album-circle-plus.png" id="24_c7l04"]
 [ext_resource type="Texture2D" uid="uid://0o23t8wgsp0j" path="res://ui/scene/video_editor/ui/icons/menu/angle-small-down.png" id="25_j7v58"]
 [ext_resource type="Texture2D" uid="uid://bula4qh2vjac8" path="res://ui/scene/video_editor/ui/icons/video/minus-small (4).png" id="25_vutyd"]
 [ext_resource type="Texture2D" uid="uid://b2icf1tpoq1l7" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/menu-dots.png" id="26_gees2"]
 [ext_resource type="Texture2D" uid="uid://8qdca3qffcii" path="res://ui/scene/video_editor/ui/icons/timeline/menu-dots-vertical.png" id="26_to8qp"]
 [ext_resource type="Texture2D" uid="uid://c85jagn1456ex" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/clone.png" id="27_5x2mv"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/MediaGridContainer.gd" id="27_kebf8"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="27_p36yu"]
 [ext_resource type="Texture2D" uid="uid://tg5h5h53kfj3" path="res://ui/scene/video_editor/ui/icons/timeline/rhombus.png" id="27_qseke"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/ObjectsList.gd" id="28_gear7"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/panel_controllers/InspectorValues.gd" id="28_07tpt"]
 [ext_resource type="Texture2D" uid="uid://6wk3o3rgnx4j" path="res://ui/scene/video_editor/ui/icons/timeline/line-base.png" id="28_jv5ei"]
 [ext_resource type="Texture2D" uid="uid://du7ssxjgdwf6t" path="res://ui/scene/video_editor/ui/icons/timeline/angle-small-up.png" id="28_k3u27"]
 [ext_resource type="Texture2D" uid="uid://t2oi0jey5x4e" path="res://ui/scene/video_editor/ui/icons/video/volume.png" id="28_k7sw6"]
@@ -47,22 +48,24 @@
 [ext_resource type="Texture2D" uid="uid://58xg4wx7sqx2" path="res://ui/scene/video_editor/ui/icons/timeline/layer-plus.png" id="29_bo3cv"]
 [ext_resource type="Texture2D" uid="uid://tvrbci3soudx" path="res://ui/scene/video_editor/ui/icons/video/volume-mute.png" id="29_cxaee"]
 [ext_resource type="Texture2D" uid="uid://cgnb7436ond4n" path="res://ui/scene/video_editor/ui/icons/files/animated-icon.png" id="29_suf26"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/MediaGridContainer.gd" id="30_6l6ae"]
 [ext_resource type="Texture2D" uid="uid://ddrie8330kach" path="res://ui/scene/video_editor/ui/icons/video/expand.png" id="30_22n8c"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/BusController.gd" id="30_dujql"]
 [ext_resource type="Texture2D" uid="uid://c4ge2r3lfc36d" path="res://ui/scene/video_editor/ui/icons/video/compress.png" id="31_7ylv4"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/ObjectsList.gd" id="31_moirf"]
 [ext_resource type="FontFile" uid="uid://buoe6xj8jf16q" path="res://ui/scene/video_editor/ui/fonts/Source_Code_Pro/static/SourceCodePro-Medium.ttf" id="31_n4i56"]
 [ext_resource type="Texture2D" uid="uid://my2amisjyqlf" path="res://ui/scene/video_editor/ui/icons/inspector/code_editor/plus-hexagon.png" id="31_vmcx0"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/GLSLCodeEdit.gd" id="37_hy8hn"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/TimeBarController.gd" id="48_qmiy2"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/TimeBarLive.gd" id="49_p3ewh"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/LayerControl.gd" id="51_3qa0p"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/OpenerButton.gd" id="53_vqbp3"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/BusController.gd" id="33_iobvb"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/GLSLCodeEdit.gd" id="40_43tb3"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TimeBarController.gd" id="51_56jll"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TimeBarLive.gd" id="52_g4ymn"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/LayerControl.gd" id="54_x7v8n"]
 [ext_resource type="Texture2D" uid="uid://bsqjksh2desba" path="res://ui/scene/video_editor/ui/icons/popups/cross-small.png" id="55_yocbj"]
 [ext_resource type="Texture2D" uid="uid://bno1o6jrrban8" path="res://ui/scene/video_editor/ui/icons/warning/triangle-warning.png" id="56_8flnr"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/OpenerButton.gd" id="56_vhmnd"]
 [ext_resource type="Texture2D" uid="uid://djssrjje2e82p" path="res://ui/scene/video_editor/ui/icons/warning/info.png" id="57_2nf45"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/DebugBar.gd" id="58_v7nai"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/popups/PopupController.gd" id="59_b7g5y"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/popups/RenderPopup.gd" id="60_qb6ht"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/DebugBar.gd" id="61_siaub"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/popups/PopupController.gd" id="62_dnlfx"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/popups/RenderPopup.gd" id="63_bc2xf"]
 [ext_resource type="FontFile" uid="uid://dmqfh7jouq8ck" path="res://ui/scene/video_editor/ui/fonts/Rubik/static/Rubik-Medium.ttf" id="65_3kv8f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtk05"]
@@ -83,7 +86,7 @@ corner_radius_bottom_left = 20
 bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tdte"]
-bg_color = Color(0.301961, 0.301961, 0.301961, 1)
+bg_color = Color(0.301961, 0.301961, 0.301961, 0)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -92,7 +95,7 @@ expand_margin_left = 4.0
 expand_margin_right = 6.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjylh"]
-bg_color = Color(0.490196, 0.490196, 0.490196, 1)
+bg_color = Color(0.490196, 0.490196, 0.490196, 0.521569)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -295,8 +298,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fga5g"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t16jj"]
 bg_color = Color(0.235294, 0.235294, 0.235294, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rns1n"]
+bg_color = Color(0.333333, 0.333333, 0.333333, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcxab"]
+bg_color = Color(0.235294, 0.235294, 0.235294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.364706, 0.364706, 0.364706, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -372,7 +394,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tx7et")
+script = ExtResource("1_r217t")
 
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 1
@@ -395,7 +417,7 @@ theme_override_constants/separation = 0
 [node name="TitleBar" type="Panel" parent="Content"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
-script = ExtResource("2_1vjgk")
+script = ExtResource("2_ey4tx")
 
 [node name="MarginContainer" type="MarginContainer" parent="Content/TitleBar"]
 layout_mode = 1
@@ -457,7 +479,7 @@ popup/item_1/id = 1
 popup/item_2/text = "Import"
 popup/item_2/icon = ExtResource("8_3cwy0")
 popup/item_2/id = 2
-script = ExtResource("11_i06st")
+script = ExtResource("11_3o52n")
 
 [node name="RecordMenu" type="Button" parent="Content/TitleBar/MarginContainer/Left"]
 editor_description = "Opens Menu to record Voice Overs or SFX"
@@ -516,7 +538,7 @@ layout_mode = 2
 texture_normal = ExtResource("10_eljgy")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="Edit" type="LineEdit" parent="Content/TitleBar/MarginContainer/Right/SearchBar/MarginContainer/Content"]
 editor_description = "Search for any Editor Feature, Resource in the project, etc."
@@ -627,12 +649,12 @@ theme_override_constants/margin_bottom = 10
 [node name="Contents" type="HBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
-script = ExtResource("19_uvb8b")
+script = ExtResource("19_m4v8u")
 
 [node name="MenuContainer" type="Control" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents"]
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
-script = ExtResource("20_p3fno")
+script = ExtResource("20_ycncn")
 
 [node name="Menus" type="VBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/MenuContainer"]
 z_index = 2
@@ -649,6 +671,17 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 alignment = 1
 
+[node name="InspBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/MenuContainer/Menus"]
+editor_description = "Opens Inspection Menu to change Objects' properties"
+custom_minimum_size = Vector2(16, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+button_mask = 3
+texture_normal = ExtResource("21_raqap")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("14_ajthw")
+
 [node name="ResBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/MenuContainer/Menus"]
 editor_description = "Opens Menu to all imported resources"
 custom_minimum_size = Vector2(16, 36)
@@ -658,7 +691,7 @@ button_mask = 3
 texture_normal = ExtResource("2_fydnk")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="ShapeBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/MenuContainer/Menus"]
 editor_description = "Opens Menun to all possible shapes and objects, including rectangles, texts, etc."
@@ -669,7 +702,7 @@ button_mask = 3
 texture_normal = ExtResource("17_3kml0")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="AudioBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/MenuContainer/Menus"]
 editor_description = "Opens Audio Editor"
@@ -680,7 +713,7 @@ button_mask = 3
 texture_normal = ExtResource("3_vkvw2")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="EffectBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/MenuContainer/Menus"]
 editor_description = "Opens Effects Menu, where you can apply and Edit Effects"
@@ -691,7 +724,7 @@ button_mask = 3
 texture_normal = ExtResource("4_4nkxp")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="ScriptBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/MenuContainer/Menus"]
 editor_description = "Menu, which lets you wirte custom scripts to autopmate processes ( .gd ) and custom effects as shaders ( .glsl )"
@@ -702,7 +735,7 @@ button_mask = 3
 texture_normal = ExtResource("5_ha32d")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="AIBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/MenuContainer/Menus"]
 editor_description = "Opens Menu of all implemented AI helping Agents ( Beta )"
@@ -714,7 +747,7 @@ button_mask = 3
 texture_normal = ExtResource("6_d1dnl")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="Selection" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/MenuContainer"]
 editor_description = "Opens Menu with all Elements in Project"
@@ -731,6 +764,53 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_r2nk6")
 [node name="InspectorPanels" type="Control" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="InspectorValues" type="Control" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("28_07tpt")
+
+[node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/InspectorValues"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ContentContainer" type="VBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/InspectorValues/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/InspectorValues/MarginContainer/ContentContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.545098, 0.545098, 0.545098, 1)
+theme_override_font_sizes/font_size = 12
+text = "Film"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/InspectorValues/MarginContainer/ContentContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+script = ExtResource("27_p36yu")
+allow_horizontal_scroll = false
+
+[node name="GridContainer" type="GridContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/InspectorValues/MarginContainer/ContentContainer/SmoothScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
 
 [node name="Files" type="Control" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels"]
 visible = false
@@ -750,6 +830,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
+script = ExtResource("27_p36yu")
+speed = 8.0
+allow_horizontal_scroll = false
 
 [node name="GridContainer" type="GridContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer"]
 layout_mode = 2
@@ -758,7 +841,7 @@ size_flags_vertical = 3
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 8
-script = ExtResource("27_kebf8")
+script = ExtResource("30_6l6ae")
 
 [node name="Panel" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -1074,7 +1157,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("28_gear7")
+script = ExtResource("31_moirf")
 
 [node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Objects"]
 layout_mode = 1
@@ -1132,7 +1215,7 @@ layout_mode = 2
 texture_normal = ExtResource("24_c7l04")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/AudioMixer/MarginContainer/Conent"]
 layout_mode = 2
@@ -1146,7 +1229,7 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pee13")
-script = ExtResource("30_dujql")
+script = ExtResource("33_iobvb")
 
 [node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/AudioMixer/MarginContainer/Conent/ScrollContainer/BusList/BusMaster"]
 layout_mode = 1
@@ -1181,7 +1264,7 @@ layout_mode = 2
 texture_normal = ExtResource("26_gees2")
 ignore_texture_size = true
 stretch_mode = 6
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="DuplicateBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/AudioMixer/MarginContainer/Conent/ScrollContainer/BusList/BusMaster/MarginContainer/Contents/Settings"]
 editor_description = "Duplicate Audio Bus"
@@ -1190,7 +1273,7 @@ layout_mode = 2
 texture_normal = ExtResource("27_5x2mv")
 ignore_texture_size = true
 stretch_mode = 6
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="RemoveBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/AudioMixer/MarginContainer/Conent/ScrollContainer/BusList/BusMaster/MarginContainer/Contents/Settings"]
 editor_description = "Delete Audio Bus"
@@ -1200,7 +1283,7 @@ disabled = true
 texture_normal = ExtResource("28_rm6q8")
 ignore_texture_size = true
 stretch_mode = 6
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="AudioPreview" type="HBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/AudioMixer/MarginContainer/Conent/ScrollContainer/BusList/BusMaster/MarginContainer/Contents"]
 custom_minimum_size = Vector2(0, 64)
@@ -1324,7 +1407,7 @@ custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 focus_mode = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_pee13")
-script = ExtResource("30_dujql")
+script = ExtResource("33_iobvb")
 
 [node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/AudioMixer/MarginContainer/Conent/ScrollContainer/BusList/BusWater"]
 layout_mode = 1
@@ -1359,7 +1442,7 @@ layout_mode = 2
 texture_normal = ExtResource("26_gees2")
 ignore_texture_size = true
 stretch_mode = 6
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="DuplicateBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/AudioMixer/MarginContainer/Conent/ScrollContainer/BusList/BusWater/MarginContainer/Contents/Settings"]
 editor_description = "Duplicate Audio Bus"
@@ -1368,7 +1451,7 @@ layout_mode = 2
 texture_normal = ExtResource("27_5x2mv")
 ignore_texture_size = true
 stretch_mode = 6
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="RemoveBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/AudioMixer/MarginContainer/Conent/ScrollContainer/BusList/BusWater/MarginContainer/Contents/Settings"]
 editor_description = "Delete Audio Bus"
@@ -1377,7 +1460,7 @@ layout_mode = 2
 texture_normal = ExtResource("28_rm6q8")
 ignore_texture_size = true
 stretch_mode = 6
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="AudioPreview" type="HBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/AudioMixer/MarginContainer/Conent/ScrollContainer/BusList/BusWater/MarginContainer/Contents"]
 custom_minimum_size = Vector2(0, 64)
@@ -1499,329 +1582,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_scroll_mode = 0
-
-[node name="GridContainer" type="GridContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/h_separation = 5
-theme_override_constants/v_separation = 5
-columns = 8
-script = ExtResource("27_kebf8")
-
-[node name="Panel" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel2" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel3" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel4" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel5" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel6" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel7" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel8" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel9" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel10" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel11" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel12" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel13" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel14" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel15" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel16" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel17" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel18" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel19" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel20" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel21" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel22" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel23" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel24" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel25" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel26" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel27" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel28" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel29" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel30" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel31" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel32" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel33" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel34" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel35" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel36" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel37" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel38" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel39" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel40" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel41" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel42" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel43" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel44" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel45" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel46" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel47" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel48" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel49" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel50" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel51" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel52" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel53" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel54" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel55" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel56" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel57" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel58" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel59" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel60" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel61" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/FX/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
 [node name="CodeEdit" type="Control" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels"]
 visible = false
 clip_contents = true
@@ -1867,7 +1627,7 @@ layout_mode = 2
 texture_normal = ExtResource("31_vmcx0")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="GLSLCodeEdit" type="CodeEdit" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/CodeEdit/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -1896,7 +1656,7 @@ auto_brace_completion_pairs = {
 "[": "]",
 "{": "}"
 }
-script = ExtResource("37_hy8hn")
+script = ExtResource("40_43tb3")
 
 [node name="Preview" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter"]
 layout_mode = 2
@@ -1957,7 +1717,7 @@ theme_override_font_sizes/font_size = 10
 text = "No Video loaded"
 horizontal_alignment = 1
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/Videocontainer"]
+[node name="VideoStreamPlayer" type="TextureRect" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/Videocontainer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1965,8 +1725,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-autoplay = true
-expand = true
+expand_mode = 1
 
 [node name="PreviewControl" type="Control" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit"]
 custom_minimum_size = Vector2(0, 20)
@@ -1983,13 +1742,12 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Backbtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/PreviewControl/IconContainerCentre"]
-editor_description = "Play / Pause Preview"
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture_normal = ExtResource("25_vutyd")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="PlayBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/PreviewControl/IconContainerCentre"]
 editor_description = "Play / Pause Preview"
@@ -2000,7 +1758,7 @@ texture_normal = ExtResource("2_6ynw7")
 texture_pressed = ExtResource("3_4tfld")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="StopBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/PreviewControl/IconContainerCentre"]
 editor_description = "Stop Preview and go back to start"
@@ -2010,16 +1768,15 @@ toggle_mode = true
 texture_normal = ExtResource("4_od1mv")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="FrontBtn" type="TextureButton" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/PreviewControl/IconContainerCentre"]
-editor_description = "Play / Pause Preview"
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture_normal = ExtResource("29_axrd2")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="Left" type="HBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/PreviewControl"]
 layout_mode = 1
@@ -2038,7 +1795,7 @@ texture_normal = ExtResource("28_k7sw6")
 texture_pressed = ExtResource("29_cxaee")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="CurrentTime" type="Label" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/PreviewControl/Left"]
 layout_mode = 2
@@ -2077,7 +1834,7 @@ texture_normal = ExtResource("30_22n8c")
 texture_pressed = ExtResource("31_7ylv4")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="Timeline" type="Control" parent="Content/TimelineSplitter"]
 layout_mode = 2
@@ -2107,7 +1864,7 @@ theme_override_constants/margin_bottom = 4
 
 [node name="TimeSplit" type="VBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer"]
 layout_mode = 2
-script = ExtResource("48_qmiy2")
+script = ExtResource("51_56jll")
 
 [node name="TimeBar" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit"]
 custom_minimum_size = Vector2(200, 20)
@@ -2125,7 +1882,7 @@ offset_left = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8vxsp")
-script = ExtResource("49_p3ewh")
+script = ExtResource("52_g4ymn")
 
 [node name="TextureRect" type="TextureRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/TimeBar/TimeBarLive"]
 custom_minimum_size = Vector2(0, 8)
@@ -2181,7 +1938,7 @@ layout_mode = 2
 texture_normal = ExtResource("29_bo3cv")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit"]
 custom_minimum_size = Vector2(200, 0)
@@ -2191,7 +1948,7 @@ size_flags_vertical = 3
 [node name="Layers" type="VBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("51_3qa0p")
+script = ExtResource("54_x7v8n")
 
 [node name="Layer1" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers"]
 custom_minimum_size = Vector2(100, 20)
@@ -2209,11 +1966,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="LayerTag" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit"]
+[node name="LayerTag" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit"]
 z_index = 1
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fga5g")
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_t16jj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rns1n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mcxab")
+toggle_mode = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/LayerTag"]
 layout_mode = 1
@@ -2243,7 +2004,7 @@ toggle_mode = true
 texture_normal = ExtResource("28_k3u27")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("53_vqbp3")
+script = ExtResource("56_vhmnd")
 
 [node name="Dragger" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(10, 0)
@@ -2679,11 +2440,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="LayerTag" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit"]
+[node name="LayerTag" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit"]
 z_index = 1
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fga5g")
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_t16jj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rns1n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mcxab")
+toggle_mode = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/LayerTag"]
 layout_mode = 1
@@ -2713,7 +2478,7 @@ toggle_mode = true
 texture_normal = ExtResource("28_k3u27")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("53_vqbp3")
+script = ExtResource("56_vhmnd")
 
 [node name="Dragger" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(10, 0)
@@ -2768,7 +2533,7 @@ patch_margin_bottom = 6
 [node name="DebugBar" type="Panel" parent="Content"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-script = ExtResource("58_v7nai")
+script = ExtResource("61_siaub")
 
 [node name="MarginContainer" type="MarginContainer" parent="Content/DebugBar"]
 layout_mode = 1
@@ -2798,7 +2563,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("59_b7g5y")
+script = ExtResource("62_dnlfx")
 
 [node name="BG" type="ColorRect" parent="PopupPanels"]
 layout_mode = 1
@@ -2833,7 +2598,7 @@ offset_right = 200.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("60_qb6ht")
+script = ExtResource("63_bc2xf")
 
 [node name="Panel" type="Panel" parent="PopupPanels/Popups/RenderPopup"]
 layout_mode = 1
@@ -2889,7 +2654,7 @@ grow_vertical = 2
 texture_normal = ExtResource("55_yocbj")
 ignore_texture_size = true
 stretch_mode = 5
-script = ExtResource("14_oxq1r")
+script = ExtResource("14_ajthw")
 
 [node name="Body" type="GridContainer" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://cu7jy5ymgg6os"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://cu7jy5ymgg6os"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6apu"]
 bg_color = Color(0.262745, 0.262745, 0.262745, 1)
@@ -16,6 +16,43 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmdow"]
 bg_color = Color(0.105882, 0.105882, 0.105882, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wctv"]
+bg_color = Color(0.352941, 0.352941, 0.352941, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvq76"]
+bg_color = Color(0.352941, 0.352941, 0.352941, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmgr5"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fapvf"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35kw7"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -76,7 +113,17 @@ Button/styles/disabled = null
 Button/styles/hover = SubResource("StyleBoxFlat_q6apu")
 Button/styles/normal = SubResource("StyleBoxFlat_nhvf2")
 Button/styles/pressed = SubResource("StyleBoxFlat_cmdow")
+CheckBox/styles/hover = SubResource("StyleBoxFlat_3wctv")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxFlat_wvq76")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_bmgr5")
+CheckBox/styles/pressed = SubResource("StyleBoxFlat_fapvf")
 CheckButton/icons/checked = null
+ColorPicker/constants/h_width = 30
+ColorPicker/constants/label_width = 6
+ColorPicker/constants/margin = 1
+ColorPicker/constants/sv_height = 128
+ColorPicker/constants/sv_width = 128
+LineEdit/styles/normal = SubResource("StyleBoxFlat_35kw7")
 Panel/styles/panel = SubResource("StyleBoxFlat_tag8q")
 PopupMenu/font_sizes/font_size = 12
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_tk6k8")

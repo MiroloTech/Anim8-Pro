@@ -17,12 +17,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 FFMPEG="*res://classes/global/ffmpeg/ffmpeg.gd"
-INSTBUS="*res://ui/scene/video_editor/ui/controllers/train/InstanceBus.gd"
+INSTBUS="*res://ui/scene/video_editor/ui/node_controllers/train/InstanceBus.gd"
 STRUTIL="*res://classes/global/util/strutil.gd"
+EASE="*res://classes/global/ease/ease.gd"
+MAKEUI="*res://classes/global/ui/makeui.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg")
 
 [gui]
 

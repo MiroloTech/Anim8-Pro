@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://7kyo7hpdhne8"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://ui/scene/project_selection/controllers/Project1Test.gd" id="1_6y5lp"]
 [ext_resource type="Texture2D" uid="uid://csf0sbpvyj1ae" path="res://ui/scene/project_selection/icons/projects/edit-alt.png" id="1_ep3d3"]
 [ext_resource type="Texture2D" uid="uid://tgsdk8l0q3nl" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/trash.png" id="1_ymckp"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/controllers/TextureButton.gd" id="3_f5fom"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TextureButton.gd" id="3_f5fom"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uqdt"]
 bg_color = Color(0.196078, 0.196078, 0.196078, 1)
