@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=8 format=3 uid="uid://c8lexhjju0ta3"]
 
 [ext_resource type="Script" path="res://ui/scene/project_selection/controllers/Project1Test.gd" id="1_6y5lp"]
 [ext_resource type="Texture2D" uid="uid://csf0sbpvyj1ae" path="res://ui/scene/project_selection/icons/projects/edit-alt.png" id="1_ep3d3"]

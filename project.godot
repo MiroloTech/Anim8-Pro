@@ -21,6 +21,12 @@ INSTBUS="*res://ui/scene/video_editor/ui/node_controllers/train/InstanceBus.gd"
 STRUTIL="*res://classes/global/util/strutil.gd"
 EASE="*res://classes/global/ease/ease.gd"
 MAKEUI="*res://classes/global/ui/makeui.gd"
+PROJECTINFO="*res://classes/global/project/PROJECTINFO.gd"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
 
 [editor_plugins]
 

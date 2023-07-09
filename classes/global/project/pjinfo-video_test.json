@@ -1,0 +1,9 @@
+{
+	"name" : "video_test",
+	"frame_count" : 469,
+	"file_type" : ".mp4",
+	"fps" : 60,
+	"aspect_ratio" : "16 : 9",
+	"upscaling" : 1.0,
+	"resolution" : "1080p"
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://bybhd73u5gjx6"]
+[gd_scene load_steps=118 format=3 uid="uid://bybhd73u5gjx6"]
 
 [ext_resource type="Theme" uid="uid://cu7jy5ymgg6os" path="res://ui/scene/video_editor/ui/theme/dark.tres" id="1_2js7r"]
 [ext_resource type="Texture2D" uid="uid://bir2lis7ir8xa" path="res://ui/scene/video_editor/ui/icons/program/brightness.png" id="1_6utsr"]
@@ -38,9 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://8qdca3qffcii" path="res://ui/scene/video_editor/ui/icons/timeline/menu-dots-vertical.png" id="26_to8qp"]
 [ext_resource type="Texture2D" uid="uid://c85jagn1456ex" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/clone.png" id="27_5x2mv"]
 [ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="27_p36yu"]
-[ext_resource type="Texture2D" uid="uid://tg5h5h53kfj3" path="res://ui/scene/video_editor/ui/icons/timeline/rhombus.png" id="27_qseke"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/panel_controllers/InspectorValues.gd" id="28_07tpt"]
-[ext_resource type="Texture2D" uid="uid://6wk3o3rgnx4j" path="res://ui/scene/video_editor/ui/icons/timeline/line-base.png" id="28_jv5ei"]
 [ext_resource type="Texture2D" uid="uid://du7ssxjgdwf6t" path="res://ui/scene/video_editor/ui/icons/timeline/angle-small-up.png" id="28_k3u27"]
 [ext_resource type="Texture2D" uid="uid://t2oi0jey5x4e" path="res://ui/scene/video_editor/ui/icons/video/volume.png" id="28_k7sw6"]
 [ext_resource type="Texture2D" uid="uid://tgsdk8l0q3nl" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/trash.png" id="28_rm6q8"]
@@ -324,12 +322,64 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sinqd"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hif2k"]
+bg_color = Color(0.815686, 0.815686, 0.815686, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hc5xo"]
+bg_color = Color(0.529412, 0.529412, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_voql5"]
 bg_color = Color(0.172549, 0.172549, 0.172549, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03fdd"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ni88"]
+bg_color = Color(0.698039, 0.698039, 0.698039, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txyko"]
+bg_color = Color(0.490196, 0.490196, 0.490196, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85woa"]
 bg_color = Color(0.152941, 0.152941, 0.152941, 1)
@@ -387,7 +437,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="Control" type="Control"]
+[node name="Scene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1727,6 +1777,22 @@ grow_vertical = 2
 size_flags_vertical = 3
 expand_mode = 1
 
+[node name="StreamContainer" type="Control" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/Videocontainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit/Videocontainer/StreamContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="PreviewControl" type="Control" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Preview/MarginContainer/ScreenSplit"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -2046,25 +2112,25 @@ offset_bottom = 6.0
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="Anim1" type="NinePatchRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/Contents/ContentList"]
+[node name="Film1" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/Contents/ContentList"]
 modulate = Color(0.905882, 0.513726, 0.65098, 1)
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-texture = ExtResource("28_jv5ei")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_sinqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif2k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hc5xo")
+toggle_mode = true
 
-[node name="Anim2" type="NinePatchRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/Contents/ContentList"]
+[node name="Film2" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/Contents/ContentList"]
 modulate = Color(0.905882, 0.513726, 0.65098, 1)
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-texture = ExtResource("28_jv5ei")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_sinqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif2k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hc5xo")
+toggle_mode = true
 
 [node name="Layer1Children" type="VBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers"]
 clip_contents = true
@@ -2150,38 +2216,55 @@ layout_mode = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -8.0
-offset_right = 22.0
+offset_left = -6.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = -16.0
 grow_vertical = 2
 
-[node name="Keyframe" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-offset_right = 16.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="Keyframe1" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents/ContentList"]
+custom_minimum_size = Vector2(12, 12)
+layout_direction = 1
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+rotation = 0.785398
+pivot_offset = Vector2(6, 6)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_03fdd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ni88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txyko")
+toggle_mode = true
 
-[node name="Keyframe2" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
+[node name="Keyframe2" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents/ContentList"]
+custom_minimum_size = Vector2(12, 12)
+layout_direction = 1
+layout_mode = 0
 offset_left = 120.0
-offset_right = 136.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
+offset_right = 132.0
+offset_bottom = 12.0
+rotation = 0.785398
+pivot_offset = Vector2(6, 6)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_03fdd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ni88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txyko")
+toggle_mode = true
 
-[node name="Keyframe3" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
+[node name="Keyframe3" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents/ContentList"]
+custom_minimum_size = Vector2(12, 12)
+layout_direction = 1
+layout_mode = 0
 offset_left = 340.0
-offset_right = 356.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
+offset_right = 352.0
+offset_bottom = 12.0
+rotation = 0.785398
+pivot_offset = Vector2(6, 6)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_03fdd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ni88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txyko")
+toggle_mode = true
 
 [node name="KeyframeLayer2" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children"]
 clip_contents = true
@@ -2262,38 +2345,55 @@ layout_mode = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -8.0
-offset_right = 22.0
+offset_left = -6.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = -16.0
 grow_vertical = 2
 
-[node name="Keyframe" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer2/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-offset_right = 16.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="Keyframe1" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer2/LayerTagSplit/Contents/ContentList"]
+custom_minimum_size = Vector2(12, 12)
+layout_direction = 1
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+rotation = 0.785398
+pivot_offset = Vector2(6, 6)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_03fdd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ni88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txyko")
+toggle_mode = true
 
-[node name="Keyframe2" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer2/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-offset_left = 50.0
-offset_right = 66.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="Keyframe2" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer2/LayerTagSplit/Contents/ContentList"]
+custom_minimum_size = Vector2(12, 12)
+layout_direction = 1
+layout_mode = 0
+offset_left = 60.0
+offset_right = 72.0
+offset_bottom = 12.0
+rotation = 0.785398
+pivot_offset = Vector2(6, 6)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_03fdd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ni88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txyko")
+toggle_mode = true
 
-[node name="Keyframe3" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer2/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
+[node name="Keyframe3" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer2/LayerTagSplit/Contents/ContentList"]
+custom_minimum_size = Vector2(12, 12)
+layout_direction = 1
+layout_mode = 0
 offset_left = 120.0
-offset_right = 136.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
+offset_right = 132.0
+offset_bottom = 12.0
+rotation = 0.785398
+pivot_offset = Vector2(6, 6)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_03fdd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ni88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txyko")
+toggle_mode = true
 
 [node name="KeyframeLayer3" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children"]
 clip_contents = true
@@ -2374,48 +2474,55 @@ layout_mode = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -8.0
-offset_right = 22.0
+offset_left = -6.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = -16.0
 grow_vertical = 2
 
-[node name="Keyframe" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer3/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-offset_right = 16.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="Keyframe1" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer3/LayerTagSplit/Contents/ContentList"]
+custom_minimum_size = Vector2(12, 12)
+layout_direction = 1
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+rotation = 0.785398
+pivot_offset = Vector2(6, 6)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_03fdd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ni88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txyko")
+toggle_mode = true
 
-[node name="Keyframe2" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer3/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
+[node name="Keyframe2" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer3/LayerTagSplit/Contents/ContentList"]
+custom_minimum_size = Vector2(12, 12)
+layout_direction = 1
+layout_mode = 0
 offset_left = 250.0
-offset_right = 266.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
+offset_right = 262.0
+offset_bottom = 12.0
+rotation = 0.785398
+pivot_offset = Vector2(6, 6)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_03fdd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ni88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txyko")
+toggle_mode = true
 
-[node name="Keyframe3" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer3/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-offset_left = 430.0
-offset_right = 446.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Keyframe4" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer3/LayerTagSplit/Contents/ContentList"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-offset_left = 648.0
-offset_right = 664.0
-offset_bottom = 20.0
-texture_normal = ExtResource("27_qseke")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="Keyframe3" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer3/LayerTagSplit/Contents/ContentList"]
+custom_minimum_size = Vector2(12, 12)
+layout_direction = 1
+layout_mode = 0
+offset_left = 420.0
+offset_right = 432.0
+offset_bottom = 12.0
+rotation = 0.785398
+pivot_offset = Vector2(6, 6)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_03fdd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ni88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txyko")
+toggle_mode = true
 
 [node name="DragLine" type="ColorRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers"]
 visible = false
@@ -2520,15 +2627,15 @@ offset_bottom = 6.0
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="Anim1" type="NinePatchRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/Contents/ContentList"]
+[node name="Audio1" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/Contents/ContentList"]
 modulate = Color(0.631373, 0.678431, 0.529412, 1)
-custom_minimum_size = Vector2(340, 0)
+custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
-texture = ExtResource("28_jv5ei")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_sinqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif2k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hc5xo")
+toggle_mode = true
 
 [node name="DebugBar" type="Panel" parent="Content"]
 custom_minimum_size = Vector2(0, 20)
@@ -2699,6 +2806,49 @@ popup/item_7/id = 7
 popup/item_8/text = ".jpg"
 popup/item_8/id = 8
 
+[node name="ResolutionLabel" type="Label" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "Resolution"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResolutionMenu" type="MenuButton" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_w157n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d3mkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ijbmx")
+text = "1080p"
+flat = false
+item_count = 12
+popup/item_0/text = "16K"
+popup/item_0/id = 8
+popup/item_1/text = "8K"
+popup/item_1/id = 4
+popup/item_2/text = "6K"
+popup/item_2/id = 11
+popup/item_3/text = "5K"
+popup/item_3/id = 10
+popup/item_4/text = "4K"
+popup/item_4/id = 1
+popup/item_5/text = "2K"
+popup/item_5/id = 9
+popup/item_6/text = "1080p"
+popup/item_6/id = 2
+popup/item_7/text = "720p"
+popup/item_7/id = 3
+popup/item_8/text = "480p"
+popup/item_8/id = 4
+popup/item_9/text = "360p"
+popup/item_9/id = 7
+popup/item_10/text = "240p"
+popup/item_10/id = 5
+popup/item_11/text = "144p"
+popup/item_11/id = 6
+
 [node name="ScaleLabel" type="Label" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content/Body"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2777,7 +2927,7 @@ text = "Aspect Ratio"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AspecMenu" type="MenuButton" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content/Body"]
+[node name="AspectMenu" type="MenuButton" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content/Body"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
@@ -2786,20 +2936,28 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_d3mkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ijbmx")
 text = "16 : 9"
 flat = false
-item_count = 6
+item_count = 10
 popup/item_0/text = "1 : 1"
 popup/item_0/id = 0
 popup/item_1/text = "4 : 3"
 popup/item_1/id = 1
-popup/item_2/text = "16 : 9"
-popup/item_2/id = 2
-popup/item_3/text = "21 : 9"
-popup/item_3/id = 3
-popup/item_4/text = ""
-popup/item_4/id = 4
-popup/item_4/separator = true
-popup/item_5/text = "9 : 16"
-popup/item_5/id = 5
+popup/item_2/text = "4 : 5"
+popup/item_2/id = 6
+popup/item_3/text = "5 : 3"
+popup/item_3/id = 7
+popup/item_4/text = "5 : 4"
+popup/item_4/id = 8
+popup/item_5/text = "16 : 9"
+popup/item_5/id = 2
+popup/item_6/text = "16 : 10"
+popup/item_6/id = 9
+popup/item_7/text = "21 : 9"
+popup/item_7/id = 3
+popup/item_8/text = ""
+popup/item_8/id = 4
+popup/item_8/separator = true
+popup/item_9/text = "9 : 16"
+popup/item_9/id = 5
 
 [node name="Final" type="VBoxContainer" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content"]
 layout_mode = 2
@@ -2850,6 +3008,19 @@ theme_override_font_sizes/font_size = 12
 text = "Scale bigger than 1x uses AI upscaling"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Statistics" type="VBoxContainer" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content/Final"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content/Final/Statistics"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.282353, 0.282353, 0.282353, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "render time    : 2h 24min
+file size             : 2.8 gb
+name                 : test_render.mp4
+resolution       : 2560 x 1440"
 
 [node name="RenderBtn" type="Button" parent="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content/Final"]
 layout_mode = 2

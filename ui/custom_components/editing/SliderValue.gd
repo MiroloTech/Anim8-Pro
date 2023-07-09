@@ -6,7 +6,12 @@ var dragging : bool = false
 var drag_input : bool = false
 var drag_diff : float = 0.0
 var last_value : float = 0.0
+var drag_dist : float = 0.0
+var last_drag_dist : float = 0.0
+
+var raw_value : float = 0.0
 var focus : bool = false
+var first_click_frame : bool = false
 
 var text_edit : LineEdit = null
 
@@ -24,11 +29,7 @@ var valid_drag : bool = false
 func _input(event):
 	if event is InputEventMouseMotion:
 		if mouse_in and dragging:
-			var add = event.relative.x * drag_step
-			var fin = round(add) if rounded else add
-			value += fin
-			value = clampf(value, min, max)
-			value = roundf(value / drag_step) * drag_step
+			drag_dist = event.relative.x
 			drag_diff += abs(event.relative.x)
 
 func _ready():
@@ -70,7 +71,9 @@ func _process(_delta):
 		if is_mouse_entered:
 			valid_drag = true
 		
+		first_click_frame = true
 		text_edit.select_all_on_focus = false
+		drag_dist = 0.0
 		dragging = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		text_edit_text_submitted("")
@@ -79,6 +82,7 @@ func _process(_delta):
 	if Input.is_action_just_released("click") and dragging:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		dragging = false
+		drag_dist = 0.0
 		get_viewport().warp_mouse(global_position + (size / 2)) # Not warping mouse if dragging to fast
 		if drag_diff < 5.0: # Pressed
 			text_edit.text = str(value)
@@ -87,10 +91,27 @@ func _process(_delta):
 		drag_diff = 0.0
 		valid_drag = false
 	
+	# Check, if mouse not moving
+	if last_drag_dist == drag_dist:
+		drag_dist = 0.0
+	
 	if Input.is_action_pressed("click") and mouse_in and valid_drag:
 		text_edit_text_submitted("")
 		emit_signal("value_submitted", value, name)
+		
+		if not first_click_frame:
+			set_value_from_raw()
+			
+		first_click_frame = false
+	else:
+		drag_dist = 0.0
+	
+	last_drag_dist = drag_dist
 
+func set_value_from_raw():
+	raw_value += drag_dist * drag_step
+	raw_value = clampf(raw_value, min, max)
+	value = ( floor(raw_value / drag_step) * drag_step ) if !rounded else floor(raw_value)
 
 func text_edit_text_changed(new_text):
 	var val = str_to_var(new_text)
@@ -107,8 +128,6 @@ func focus_exited():
 func text_edit_text_submitted(new_text, emit : bool = true):
 	text_edit.release_focus()
 	text_edit.text = str(value) if focus else prefix + str(value)
-	
-	
 	
 	if last_value != value:
 		last_value = value
@@ -127,12 +146,13 @@ func clamp2(val : Vector2, from : Vector2, to : Vector2):
 	return Vector2(x, y)
 
 func set_value(val : float):
-	value = val
-	value = clampf(value, min, max)
+	raw_value = val
+	raw_value = clampf(raw_value, min, max)
 	if not rounded:
-		value = roundf(value / drag_step) * drag_step
+		raw_value = roundf(raw_value / drag_step) * drag_step
 	else:
-		value = round(value)
+		raw_value = floor(raw_value)
+	set_value_from_raw()
 	text_edit_text_submitted("", false)
 
 

@@ -6,13 +6,16 @@ var active_controllers : Array = []
 
 func _ready():
 	# TEST
+	# change array to list of Value classes
 	var arr = [
 		["float", TYPE_FLOAT],
 		["int", TYPE_INT],
 		["bool", TYPE_BOOL],
 		["string", TYPE_STRING],
 		["vec2", TYPE_VECTOR2],
+		["vec2i", TYPE_VECTOR2I],
 		["vec3", TYPE_VECTOR3],
+		["vec3i", TYPE_VECTOR3I],
 		["color", TYPE_COLOR],
 	]
 	

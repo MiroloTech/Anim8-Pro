@@ -3,8 +3,10 @@ extends Control
 @onready var popup_container = $Popups
 @onready var darkener = $BG
 
+signal window_popped_up()
+
 # Runs at start of program
-func _ready():
+func _enter_tree():
 	INSTBUS.popup_manager = self
 	show()
 
@@ -38,3 +40,5 @@ func show_popup(tag : String):
 		return
 	
 	closest_popup.show()
+	
+	emit_signal("window_popped_up")

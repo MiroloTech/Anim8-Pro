@@ -54,6 +54,31 @@ func create_controller(type):
 		x.drag_step = 0.01
 		y.drag_step = 0.01
 		
+		x.prefix = "x: "
+		y.prefix = "y: "
+		
+		x.set_anchors_preset(Control.PRESET_FULL_RECT)
+		y.set_anchors_preset(Control.PRESET_FULL_RECT)
+		x.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		y.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		control.add_child(x)
+		control.add_child(y)
+		return control
+	
+	if type == TYPE_VECTOR2I:
+		var control = HBoxContainer.new()
+		var x = DragController.new()
+		var y = DragController.new()
+		
+		x.drag_step = 0.01
+		y.drag_step = 0.01
+		
+		x.rounded = true
+		y.rounded = true
+		
+		x.prefix = "x: "
+		y.prefix = "y: "
+		
 		x.set_anchors_preset(Control.PRESET_FULL_RECT)
 		y.set_anchors_preset(Control.PRESET_FULL_RECT)
 		x.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -71,6 +96,39 @@ func create_controller(type):
 		x.drag_step = 0.01
 		y.drag_step = 0.01
 		z.drag_step = 0.01
+		
+		x.prefix = "x: "
+		y.prefix = "y: "
+		z.prefix = "z: "
+		
+		x.set_anchors_preset(Control.PRESET_FULL_RECT)
+		y.set_anchors_preset(Control.PRESET_FULL_RECT)
+		z.set_anchors_preset(Control.PRESET_FULL_RECT)
+		x.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		y.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		z.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		control.add_child(x)
+		control.add_child(y)
+		control.add_child(z)
+		return control
+	
+	if type == TYPE_VECTOR3I:
+		var control = HBoxContainer.new()
+		var x = DragController.new()
+		var y = DragController.new()
+		var z = DragController.new()
+		
+		x.drag_step = 0.01
+		y.drag_step = 0.01
+		z.drag_step = 0.01
+		
+		x.rounded = true
+		y.rounded = true
+		z.rounded = true
+		
+		x.prefix = "x: "
+		y.prefix = "y: "
+		z.prefix = "z: "
 		
 		x.set_anchors_preset(Control.PRESET_FULL_RECT)
 		y.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -104,4 +162,6 @@ func create_controller(type):
 		control.add_child(color_edit)
 		return control
 	
-	# TODO : Add TYPE_ARRAY, VECTOR2I, VECTOR3I   ui
+	# if type == TYPE_
+	
+	# TODO : Add TYPE_ARRAY, ENUM   ui

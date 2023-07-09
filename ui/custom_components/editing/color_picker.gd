@@ -15,7 +15,7 @@ extends Control
 @export var color = Color.BLACK
 
 const IMG_SIZE = 16
-enum COLOR_TYPE_UPDATE_TYPES {RGB, HSV}
+enum COLOR_TYPE_UPDATE_TYPES {RGB, HSV, HEX}
 
 var hue = 0.0
 var saturation = 0.0
@@ -30,6 +30,7 @@ var controllers = {}
 var active : bool = false
 
 func input_changed(new_value, tag : String):
+	# print(tag + " changed to : " + str(new_value))
 	if tag == "R":
 		red = float(new_value) / 256.0
 	if tag == "G":
@@ -50,19 +51,58 @@ func input_changed(new_value, tag : String):
 		update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.RGB)
 	
 	if tag == "HEX":
-		color = Color.from_string(new_value, Color(99, 99, 99))
+		color = new_value # Color.from_string(new_value, Color(99, 99, 99))
+		update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.HEX, false)
+		# update()
 	
 	# update()
-	update_h_drag()
-	update_vs_drag()
+	# update_h_drag()
+	# update_vs_drag()
 	
-	set_controllers()
-
-func _process(_delta):
-	if not active:
-		return
+	set_controllers(false)
 	
 	update()
+	
+	# TODO : Fix issue with not updating, when mouse not in area
+
+
+func set_controllers(include_hex : bool = true):
+	for tag in controllers:
+		var ctrl = controllers[tag]
+		if tag == "R":
+			ctrl.set_value(red * 256.0)
+		if tag == "G":
+			ctrl.set_value(green * 256.0)
+		if tag == "B":
+			ctrl.set_value(blue * 256.0)
+		
+		if tag == "H":
+			ctrl.set_value(hue * 256.0)
+		if tag == "S":
+			ctrl.set_value(saturation * 256.0)
+		if tag == "V":
+			ctrl.set_value(value * 256.0)
+		
+		# if ["H", "S", "V"].has(tag):
+			# update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.HSV)
+		# if ["R", "G", "B"].has(tag):
+			# update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.RGB)
+		
+		if tag == "HEX" and include_hex:
+			ctrl.set_color(color)
+			ctrl.modulate = Color.WHITE
+		
+		
+	# update() # Creates infinite loop
+
+
+func _process(_delta):
+	if not is_visible_in_tree():
+		return
+	# if not active:
+	# 	return
+	
+	# update()
 	get_drag_input()
 	
 	update_preview()
@@ -80,8 +120,14 @@ func _ready():
 	set_controllers()
 	
 	update()
+	
+	# Connect popup to closing
+	INSTBUS.popup_manager.window_popped_up.connect(Callable(self, "hide_popup")) # self.connect(Callable(INSTBUS.popup_manager, 'window_popped_up'), 'hide_popup')
 
-func update_color_from_local_variables(update_type : COLOR_TYPE_UPDATE_TYPES):
+func hide_popup():
+	hide()
+
+func update_color_from_local_variables(update_type : COLOR_TYPE_UPDATE_TYPES, set_controller : bool = true):
 	if update_type == COLOR_TYPE_UPDATE_TYPES.RGB:
 		color.r = red
 		color.g = green
@@ -90,7 +136,7 @@ func update_color_from_local_variables(update_type : COLOR_TYPE_UPDATE_TYPES):
 		hue = color.h
 		saturation = color.s
 		value = color.v
-	else:
+	elif update_type == COLOR_TYPE_UPDATE_TYPES.HSV:
 		color.h = hue
 		color.s = saturation
 		color.v = value
@@ -98,12 +144,22 @@ func update_color_from_local_variables(update_type : COLOR_TYPE_UPDATE_TYPES):
 		red = color.r
 		green = color.g
 		blue = color.b
+	else:
+		hue = color.h
+		saturation = color.s
+		value = color.v
+		
+		red = color.r
+		green = color.g
+		blue = color.b
 	
-	update_vs_drag()
-	update_h_drag()
+	# update_vs_drag()
+	# update_h_drag()
 	
 	update()
-	set_controllers()
+	# print("Set controller from <update_color_from_local_variables>")
+	if set_controller:
+		set_controllers()
 	
 	update_preview()
 
@@ -124,34 +180,6 @@ func connect_controllers():
 		for j in i.get_children():
 			controllers[j.name] = j
 			j.connect("value_submitted", Callable(self, "input_changed"))
-
-func set_controllers():
-	for tag in controllers:
-		var new_value = controllers[tag]
-		if tag == "R":
-			new_value.set_value(red * 256.0)
-		if tag == "G":
-			new_value.set_value(green * 256.0)
-		if tag == "B":
-			new_value.set_value(blue * 256.0)
-		
-		if tag == "H":
-			new_value.set_value(hue * 256.0)
-		if tag == "S":
-			new_value.set_value(saturation * 256.0)
-		if tag == "V":
-			new_value.set_value(value * 256.0)
-		
-		# if ["H", "S", "V"].has(tag):
-			# update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.HSV)
-		# if ["R", "G", "B"].has(tag):
-			# update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.RGB)
-		
-		if tag == "HEX":
-			new_value.set_color(color)
-		
-		
-	# update() # Creates infinite loop
 
 func set_input_type(tab):
 	for i in input_type_controller.get_children():
@@ -207,13 +235,12 @@ func get_drag_input():
 		saturation = (mpos.x - vs_from.x) / (vs_to.x - vs_from.x)
 		value = 1.0 - ((mpos.y - vs_from.y) / (vs_to.y - vs_from.y))
 		# color = Color.from_hsv(color.h, s, v)
+		# update_vs_drag()
+		update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.HSV, false)
 		set_controllers()
-		update_vs_drag()
 		update()
-	else:
+	if Input.is_action_just_released("click") and can_drag_preivew:
 		can_drag_preivew = false
-	
-	
 	
 	mpos = get_global_mouse_position()
 	
@@ -228,16 +255,19 @@ func get_drag_input():
 		mpos = clamp2(mpos, h_from, h_to)
 		hue = (mpos.y - h_from.y) / (h_to.y - h_from.y)
 		# color = Color.from_hsv(h, color.s, color.v)
-		update_h_drag()
+		# update_h_drag()
+		update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.HSV, false)
 		set_controllers()
 		update()
-	else:
+	if Input.is_action_just_released("click") and can_drag_hue:
 		can_drag_hue = false
 	
-	update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.HSV)
+	
+	if (in_h or in_vs) and Input.is_action_pressed("click"):
+		update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.HSV)
 
 func update_vs_drag():
-	var mpos = get_global_mouse_position()
+	# var mpos = get_global_mouse_position()
 	
 	var vs_from = color_preview_texture.global_position
 	var vs_to = vs_from + color_preview_texture.size

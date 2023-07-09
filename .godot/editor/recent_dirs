@@ -1,12 +1,11 @@
+res://classes/global/project
+D:/DATA/Games/Anim8-Pro/classes/global/project
 res://temp
-res://ui/components/editing
-res://ui/scene/video_editor/ui/controllers/panel_controllers
 res://classes/global/ui
 res://classes/global/ease
 res://classes/global/util
 res://ui/scene/video_editor/ui/theme
 res://ui/scene/video_editor/ui/fonts/Rubik/static
-res://ui/scene/video_editor/ui/controllers/train
 res://test/scenes
 res://test
 res://classes/global/ffmpeg
