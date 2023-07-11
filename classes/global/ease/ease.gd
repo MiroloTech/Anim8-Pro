@@ -30,6 +30,10 @@ enum EASE_TYPE {
 	BOUNCE
 }
 
+func bias(x : float, bias : float):
+	var k = pow(1 - bias, 3)
+	return (x * k) / (x * k - x + 1)
+
 func ease(x : float, type : EASE_TYPE, dir : EASE_DIR):
 	match type:
 		EASE_TYPE.SINE:

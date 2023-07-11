@@ -24,7 +24,7 @@ var aspect_ratio : String = "16 : 9"
 var render_pressed : bool = false
 var render_loading_progress : float = 0.0
 
-const RENDER_LOADING_SPEED = 100.0
+const RENDER_LOADING_SPEED = 150.0
 
 # Displays selections of menus
 func set_menu_display():
@@ -108,13 +108,14 @@ func _on_exit_pressed():
 	hide()
 
 func slow_down_render_button(delta : float):
+	var push_back_force = lerpf(1.0, 0.15, (render_loading_progress / 100.0))
 	if render_btn.button_pressed and not render_pressed:
-		render_loading_progress += delta * RENDER_LOADING_SPEED
+		render_loading_progress += delta * RENDER_LOADING_SPEED #  * push_back_force
 	else:
-		render_loading_progress -= delta * 3.5 * RENDER_LOADING_SPEED
+		render_loading_progress -= delta * 3.5 * RENDER_LOADING_SPEED #  * (1.0 - push_back_force)
 	
 	render_loading_progress = clampf(render_loading_progress, 0.0, 100.0)
-	render_btn_progress.value = render_loading_progress
+	render_btn_progress.value = EASE.ease(render_loading_progress / 100.0, EASE.EASE_TYPE.QUAD, EASE.EASE_DIR.INOUT) * 100.0
 	
 	if render_loading_progress <= 0.0:
 		render_pressed = false

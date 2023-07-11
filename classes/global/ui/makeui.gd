@@ -1,5 +1,17 @@
 extends Node
 
+var valid_types = [
+	TYPE_FLOAT,
+	TYPE_INT,
+	TYPE_BOOL,
+	TYPE_STRING,
+	TYPE_VECTOR2,
+	TYPE_VECTOR2I,
+	TYPE_VECTOR3,
+	TYPE_VECTOR3I,
+	TYPE_COLOR,
+]
+
 func create_controller(type):
 	if type == TYPE_FLOAT:
 		var control = Control.new()
@@ -165,3 +177,88 @@ func create_controller(type):
 	# if type == TYPE_
 	
 	# TODO : Add TYPE_ARRAY, ENUM   ui
+
+func get_controller_value(controller_parent):
+	var ctrl = controller_parent.get_child(0)
+	if ctrl == null: return # TODO : Add error message
+	# TODO : imrpove error message handleing and show them in editor as popup
+	
+	if ctrl is DragController:
+		return int(ctrl.value) if ctrl.rounded else ctrl.value
+	
+	if ctrl is CheckBox:
+		return ctrl.button_pressed
+	
+	if ctrl is LineEdit:
+		return ctrl.text
+	
+	if ctrl is HBoxContainer:
+		var values : Array = []
+		var is_int : bool = false
+		for c in ctrl.get_children():
+			if not c is DragController: continue
+			
+			is_int = bool(max(int(c.rounded), int(is_int)))
+			
+			values.append(c.values)
+		
+		if values.size() == 2:
+			if is_int: return Vector2i(values[0], values[1])
+			else:      return  Vector2(values[0], values[1])
+		elif values.size() == 3:
+			if is_int: return Vector3i(values[0], values[1], values[2])
+			else:      return  Vector3(values[0], values[1], values[2])
+	
+	if ctrl is CustomColorPicker:
+		return ctrl.color
+
+func set_controller_value(controller_parent, value):
+	var ctrl = controller_parent.get_child(0)
+	if ctrl == null: return # TODO : Add error message
+	# TODO : imrpove error message handleing and show them in editor as popup
+	
+	if ctrl is DragController and [TYPE_INT, TYPE_FLOAT].has(typeof(value)):
+		ctrl.set_value(value)
+	
+	if ctrl is CheckBox and [TYPE_BOOL].has(typeof(value)):
+		ctrl.button_pressed = value
+	
+	if ctrl is LineEdit and [TYPE_STRING].has(typeof(value)):
+		ctrl.text = value
+	
+	if ctrl is HBoxContainer and [TYPE_VECTOR2, TYPE_VECTOR2I, TYPE_VECTOR3, TYPE_VECTOR3I].has(typeof(value)): # TODO : Do this and next
+		var values : Array = []
+		var is_int : bool = [TYPE_VECTOR2I, TYPE_VECTOR3I].has(typeof(value))
+		for cid in ctrl.get_children().size():
+			var c = ctrl.get_children([cid])
+			if not c is DragController: continue
+			
+			is_int = bool(max(int(c.rounded), int(is_int)))
+			
+			c.set_value(value.x if cid == 0 else (value.y if cid == 1 else value.z))
+	
+	if ctrl is CustomColorPicker and [TYPE_COLOR].has(typeof(value)):
+		ctrl.set_color(value)
+
+func connect_controller_to_value_changed(controller, function : Callable):
+	var ctrl = controller.get_child(0)
+	if ctrl == null: return # TODO : Add error message
+	# TODO : imrpove error message handleing and show them in editor as popup
+	
+	if ctrl is DragController:
+		ctrl.connect("value_changed", function)
+	
+	if ctrl is CheckBox:
+		ctrl.connect("toggled", function)
+	
+	if ctrl is LineEdit:
+		ctrl.connect("text_changed", function)
+	
+	if ctrl is HBoxContainer: # TODO : Do this and next
+		for c in ctrl.get_children():
+			if not c is DragController: continue
+			
+			c.connect("value_changed", function)
+	
+	if ctrl is CustomColorPicker:
+		ctrl.connect("value_changed", function)

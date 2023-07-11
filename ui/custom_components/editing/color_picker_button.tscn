@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dq6ugwcb66ks2"]
 
 [ext_resource type="Script" path="res://ui/custom_components/editing/color_picker_button.gd" id="1_6dau1"]
-[ext_resource type="PackedScene" path="res://ui/custom_components/editing/color_picker.tscn" id="1_jskbb"]
+[ext_resource type="PackedScene" uid="uid://bjt8iuio62qfi" path="res://ui/custom_components/editing/color_picker.tscn" id="1_jskbb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbdu6"]
 bg_color = Color(0.596078, 0.435294, 0.788235, 1)

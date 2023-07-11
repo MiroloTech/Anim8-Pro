@@ -26,6 +26,9 @@ var mouse_in : bool = false
 var is_mouse_entered : bool = false
 var valid_drag : bool = false
 
+signal value_changed(new_value)
+signal value_submitted(new_value, tag)
+
 func _input(event):
 	if event is InputEventMouseMotion:
 		if mouse_in and dragging:
@@ -106,6 +109,10 @@ func _process(_delta):
 	else:
 		drag_dist = 0.0
 	
+	if last_value != value:
+		emit_signal("value_changed", value)
+	
+	last_value = value
 	last_drag_dist = drag_dist
 
 func set_value_from_raw():
@@ -130,7 +137,6 @@ func text_edit_text_submitted(new_text, emit : bool = true):
 	text_edit.text = str(value) if focus else prefix + str(value)
 	
 	if last_value != value:
-		last_value = value
 		if emit:
 			emit_signal("value_submitted", value, name)
 
@@ -152,10 +158,9 @@ func set_value(val : float):
 		raw_value = roundf(raw_value / drag_step) * drag_step
 	else:
 		raw_value = floor(raw_value)
+	
 	set_value_from_raw()
 	text_edit_text_submitted("", false)
 
 
 
-
-signal value_submitted(new_value, tag)

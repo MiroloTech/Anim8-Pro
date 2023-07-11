@@ -283,6 +283,9 @@ func clamp2(val : Vector2, from : Vector2, to : Vector2):
 	var y = clampf(val.y, from.y, to.y)
 	return Vector2(x, y)
 
+func set_color(new_color : Color):
+	color = new_color
+	update_color_from_local_variables(COLOR_TYPE_UPDATE_TYPES.HEX)
 
 func _on_mouse_entered():
 	active = true

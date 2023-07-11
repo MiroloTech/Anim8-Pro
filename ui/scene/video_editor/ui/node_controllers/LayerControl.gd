@@ -9,6 +9,7 @@ func _process(delta):
 			var layer_children = get_node_or_null(c.name + 'Children')
 			if layer_children != null:
 				opener_btn.show()
+				opener_btn.mouse_filter = MOUSE_FILTER_STOP
 				for k in layer_children.get_children():
 					k.custom_minimum_size.y = lerpf(k.custom_minimum_size.y, lerpf(0.0, 20.0, float(open)), delta * 15.0)
 				
@@ -18,3 +19,4 @@ func _process(delta):
 				layer_children.scale.y = lerpf(layer_children.scale.y, float(open), delta * 15.0)
 			else:
 				opener_btn.hide()
+				opener_btn.mouse_filter = MOUSE_FILTER_IGNORE

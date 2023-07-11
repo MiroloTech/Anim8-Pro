@@ -9,8 +9,12 @@ var SUPPORTED_FILE_TYPES = [
 	"MKV",
 	
 	"PNG",
-	"JPG"
+	"JPG",
+	
+	# "TXT"
 ]
+
+var local_project_path = "res://project_files/files/"
 
 func test():
 	var out = []
@@ -68,6 +72,30 @@ func change_speed(local_path : String, new_fps : int) -> String: # Broken
 	for l in out: print(l)
 	
 	return end_path
+
+# Validates, if an import of the file is valid
+func validate_import(path : String) -> bool:
+	var file_type = (path.rsplit(".", true, 1)[1]).to_upper()
+	return SUPPORTED_FILE_TYPES.has(file_type)
+
+# imports files to local directory
+func import(path : String):
+	"""
+	# read external file
+	var old_file = FileAccess.open(path, FileAccess.READ)
+	var data = old_file.get_as_text()
+	old_file.close()
+	
+	# create new internal file
+	var file_name = path.rsplit("\\", true, 1)[1]
+	var new_file = FileAccess.open(local_project_path + file_name, FileAccess.WRITE)
+	new_file.store_string(data)
+	new_file.close()
+	"""
+	
+	# Use FFMPEG conversion with - i and -o to move files and simultainioulsy convert to image sequence
+	
+	# print("imported new file at : " + local_project_path + file_name)
 
 func _ready():
 	test()
