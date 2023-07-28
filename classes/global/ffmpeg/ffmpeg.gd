@@ -41,7 +41,7 @@ func conv(global_path : String, end_type : String):
 	# OS.execute("cd", [path], out)
 	
 	# Switch between file types
-	if end_type == "PNG" or end_type == "JPG": # TODO : add .webp
+	if end_type == "PNG" or end_type == "JPG": # HDT : add .webp
 		# convert to Image sequence
 		var end_path = '"' + path + "/" + file_name + ".frames/out-%03d." + end_type.to_lower() + '"'
 		DirAccess.make_dir_absolute(path + "/" + file_name + ".frames")

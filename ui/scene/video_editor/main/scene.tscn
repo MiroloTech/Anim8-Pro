@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://bybhd73u5gjx6"]
+[gd_scene load_steps=121 format=3 uid="uid://bybhd73u5gjx6"]
 
 [ext_resource type="Theme" uid="uid://cu7jy5ymgg6os" path="res://ui/scene/video_editor/ui/theme/dark.tres" id="1_2js7r"]
 [ext_resource type="Texture2D" uid="uid://bir2lis7ir8xa" path="res://ui/scene/video_editor/ui/icons/program/brightness.png" id="1_6utsr"]
@@ -35,17 +35,14 @@
 [ext_resource type="Texture2D" uid="uid://0o23t8wgsp0j" path="res://ui/scene/video_editor/ui/icons/menu/angle-small-down.png" id="25_j7v58"]
 [ext_resource type="Texture2D" uid="uid://bula4qh2vjac8" path="res://ui/scene/video_editor/ui/icons/video/minus-small (4).png" id="25_vutyd"]
 [ext_resource type="Texture2D" uid="uid://b2icf1tpoq1l7" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/menu-dots.png" id="26_gees2"]
-[ext_resource type="Texture2D" uid="uid://8qdca3qffcii" path="res://ui/scene/video_editor/ui/icons/timeline/menu-dots-vertical.png" id="26_to8qp"]
 [ext_resource type="Texture2D" uid="uid://c85jagn1456ex" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/clone.png" id="27_5x2mv"]
 [ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="27_p36yu"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/panel_controllers/InspectorValues.gd" id="28_07tpt"]
-[ext_resource type="Texture2D" uid="uid://du7ssxjgdwf6t" path="res://ui/scene/video_editor/ui/icons/timeline/angle-small-up.png" id="28_k3u27"]
 [ext_resource type="Texture2D" uid="uid://t2oi0jey5x4e" path="res://ui/scene/video_editor/ui/icons/video/volume.png" id="28_k7sw6"]
 [ext_resource type="Texture2D" uid="uid://tgsdk8l0q3nl" path="res://ui/scene/video_editor/ui/icons/inspector/mixer/trash.png" id="28_rm6q8"]
 [ext_resource type="Texture2D" uid="uid://ci8lr87e07p1y" path="res://ui/scene/video_editor/ui/icons/video/plus-small.png" id="29_axrd2"]
 [ext_resource type="Texture2D" uid="uid://58xg4wx7sqx2" path="res://ui/scene/video_editor/ui/icons/timeline/layer-plus.png" id="29_bo3cv"]
 [ext_resource type="Texture2D" uid="uid://tvrbci3soudx" path="res://ui/scene/video_editor/ui/icons/video/volume-mute.png" id="29_cxaee"]
-[ext_resource type="Texture2D" uid="uid://cgnb7436ond4n" path="res://ui/scene/video_editor/ui/icons/files/animated-icon.png" id="29_suf26"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/MediaGridContainer.gd" id="30_6l6ae"]
 [ext_resource type="Texture2D" uid="uid://ddrie8330kach" path="res://ui/scene/video_editor/ui/icons/video/expand.png" id="30_22n8c"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/panel_controllers/Files.gd" id="30_abs57"]
@@ -58,16 +55,18 @@
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/GLSLCodeEdit.gd" id="40_43tb3"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TimeBarController.gd" id="51_56jll"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TimeBarLive.gd" id="52_g4ymn"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/Timeline.gd" id="53_hgi6l"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/LayerControl.gd" id="54_x7v8n"]
 [ext_resource type="Texture2D" uid="uid://bsqjksh2desba" path="res://ui/scene/video_editor/ui/icons/popups/cross-small.png" id="55_yocbj"]
 [ext_resource type="Texture2D" uid="uid://bno1o6jrrban8" path="res://ui/scene/video_editor/ui/icons/warning/triangle-warning.png" id="56_8flnr"]
-[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/OpenerButton.gd" id="56_vhmnd"]
 [ext_resource type="Texture2D" uid="uid://djssrjje2e82p" path="res://ui/scene/video_editor/ui/icons/warning/info.png" id="57_2nf45"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TimelineVerticalDrag.gd" id="59_iqxj8"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/DebugBar.gd" id="61_siaub"]
-[ext_resource type="PackedScene" uid="uid://b5ru64i63mgnj" path="res://ui/scene/video_editor/ui/theme/instances/keyframe.tscn" id="61_w8x5g"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/popups/PopupController.gd" id="62_dnlfx"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TimelineDrag.gd" id="63_aocmv"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/popups/RenderPopup.gd" id="63_bc2xf"]
 [ext_resource type="FontFile" uid="uid://dmqfh7jouq8ck" path="res://ui/scene/video_editor/ui/fonts/Rubik/static/Rubik-Medium.ttf" id="65_3kv8f"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/popups/LayerAddPopup.gd" id="67_70wx0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtk05"]
 bg_color = Color(0.211765, 0.211765, 0.211765, 1)
@@ -292,130 +291,33 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5kv5"]
-bg_color = Color(0.160784, 0.160784, 0.160784, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_as7su"]
+bg_color = Color(0.203922, 0.203922, 0.203922, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t16jj"]
-bg_color = Color(0.235294, 0.235294, 0.235294, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_166vn"]
+bg_color = Color(0.352941, 0.352941, 0.352941, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rns1n"]
-bg_color = Color(0.333333, 0.333333, 0.333333, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4itc"]
+bg_color = Color(0.407843, 0.407843, 0.407843, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcxab"]
-bg_color = Color(0.235294, 0.235294, 0.235294, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.364706, 0.364706, 0.364706, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sinqd"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hif2k"]
-bg_color = Color(0.815686, 0.815686, 0.815686, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hc5xo"]
-bg_color = Color(0.529412, 0.529412, 0.529412, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x62o7"]
-bg_color = Color(0.160784, 0.160784, 0.160784, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_voql5"]
-bg_color = Color(0.172549, 0.172549, 0.172549, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7f54y"]
-bg_color = Color(0.235294, 0.235294, 0.235294, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp0pc"]
-bg_color = Color(0.333333, 0.333333, 0.333333, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4clh"]
-bg_color = Color(0.235294, 0.235294, 0.235294, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.364706, 0.364706, 0.364706, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_po4ot"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w03kc"]
-bg_color = Color(0.815686, 0.815686, 0.815686, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxg1l"]
-bg_color = Color(0.529412, 0.529412, 0.529412, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbrhy"]
+bg_color = Color(0.407843, 0.407843, 0.407843, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85woa"]
 bg_color = Color(0.152941, 0.152941, 0.152941, 1)
@@ -472,6 +374,60 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0gbp"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhagv"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0wjs"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.222656, 0.222656, 0.222656, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4df0"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qd1a"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.290196, 0.290196, 0.290196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0crrk"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5jx0"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cu7gv"]
+bg_color = Color(0.222656, 0.222656, 0.222656, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Scene" type="Control"]
 layout_mode = 3
@@ -1976,6 +1932,7 @@ script = ExtResource("14_ajthw")
 [node name="Timeline" type="Control" parent="Content/TimelineSplitter"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("53_hgi6l")
 
 [node name="Timeline" type="Panel" parent="Content/TimelineSplitter/Timeline"]
 layout_mode = 1
@@ -1986,30 +1943,34 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2js7r")
 
-[node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/Timeline"]
-clip_contents = true
+[node name="DragSplit" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/Timeline/DragSplit"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="TimeSplit" type="VBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer"]
+[node name="TimeSplit" type="VBoxContainer" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer"]
 layout_mode = 2
 script = ExtResource("51_56jll")
 
-[node name="TimeBar" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit"]
+[node name="TimeBar" type="Panel" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit"]
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_prrel")
 
-[node name="TimeBarLive" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/TimeBar"]
+[node name="TimeBarLive" type="Panel" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimeBar"]
 custom_minimum_size = Vector2(60, 20)
 layout_mode = 1
 anchors_preset = 15
@@ -2021,7 +1982,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8vxsp")
 script = ExtResource("52_g4ymn")
 
-[node name="TextureRect" type="TextureRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/TimeBar/TimeBarLive"]
+[node name="TextureRect" type="TextureRect" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimeBar/TimeBarLive"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 1
 anchors_preset = 12
@@ -2033,7 +1994,7 @@ grow_vertical = 0
 texture = SubResource("GradientTexture1D_5s04t")
 stretch_mode = 1
 
-[node name="Dragger" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/TimeBar/TimeBarLive"]
+[node name="Dragger" type="Button" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimeBar/TimeBarLive"]
 layout_mode = 0
 offset_left = 250.0
 offset_right = 290.0
@@ -2044,7 +2005,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_p1op4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_be5rc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_crf5a")
 
-[node name="TimeLineLine" type="ColorRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/TimeBar/TimeBarLive/Dragger"]
+[node name="TimeLineLine" type="ColorRect" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimeBar/TimeBarLive/Dragger"]
 z_index = 1
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 1
@@ -2060,15 +2021,24 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.360784, 0.360784, 0.360784, 1)
 
-[node name="ControllContents" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/TimeBar"]
+[node name="ControllContents" type="ColorRect" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimeBar"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 120.0
 grow_vertical = 2
 mouse_filter = 2
+color = Color(0.121569, 0.121569, 0.121569, 1)
 
-[node name="AddLayer" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/TimeBar/ControllContents"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimeBar/ControllContents"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AddLayer" type="TextureButton" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimeBar/ControllContents/HBoxContainer"]
 editor_description = "Add Layer to Timeline"
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
@@ -2077,349 +2047,81 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("14_ajthw")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit"]
+[node name="ScrollContainer" type="Control" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit"]
+clip_contents = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Layers" type="VBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer"]
+[node name="Layers" type="VBoxContainer" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/ScrollContainer"]
 layout_mode = 2
+offset_right = 1576.0
 size_flags_horizontal = 3
+theme_override_constants/separation = 2
 script = ExtResource("54_x7v8n")
 
-[node name="Layer1" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers"]
-custom_minimum_size = Vector2(100, 20)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_x5kv5")
-
-[node name="LayerTagSplit" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1"]
-clip_contents = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-
-[node name="LayerTag" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit"]
-z_index = 1
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_t16jj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rns1n")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mcxab")
-toggle_mode = true
-
-[node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/LayerTag"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_right = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/LayerTag/MarginContainer"]
-layout_mode = 2
-
-[node name="Control" type="Control" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Opener" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer/Control"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-offset_right = 16.0
-offset_bottom = 20.0
-rotation = 3.14159
-pivot_offset = Vector2(8, 10)
-toggle_mode = true
-texture_normal = ExtResource("28_k3u27")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("56_vhmnd")
-
-[node name="Dragger" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-mouse_default_cursor_shape = 13
-texture_normal = ExtResource("26_to8qp")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 12
-text = "Film"
-vertical_alignment = 1
-clip_text = true
-text_overrun_behavior = 1
-
-[node name="TypeIcon" type="TextureRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/LayerTag/MarginContainer"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-texture = ExtResource("2_fydnk")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Contents" type="Control" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit"]
-layout_mode = 2
-
-[node name="ContentList" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/Contents"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -6.0
-offset_right = 340.0
-offset_bottom = 6.0
-grow_vertical = 2
-theme_override_constants/separation = 0
-
-[node name="Film1" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/Contents/ContentList"]
-modulate = Color(0.905882, 0.513726, 0.65098, 1)
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_sinqd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hif2k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hc5xo")
-toggle_mode = true
-
-[node name="Film2" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1/LayerTagSplit/Contents/ContentList"]
-modulate = Color(0.905882, 0.513726, 0.65098, 1)
-custom_minimum_size = Vector2(220, 0)
-layout_mode = 2
-focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_sinqd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hif2k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hc5xo")
-toggle_mode = true
-
-[node name="Layer1Children" type="VBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers"]
-clip_contents = true
-layout_mode = 2
-theme_override_constants/separation = 4
-
-[node name="KeyframeLayer1" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children"]
-clip_contents = true
-custom_minimum_size = Vector2(100, 20)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_x62o7")
-
-[node name="LayerTagSplit" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-
-[node name="LayerTag" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit"]
-z_index = 1
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_voql5")
-
-[node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/LayerTag"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_right = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/LayerTag/MarginContainer"]
-layout_mode = 2
-
-[node name="ChildIndicator" type="TextureRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
-modulate = Color(0.588235, 0.588235, 0.588235, 0)
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-texture = ExtResource("28_k3u27")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Dragger" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
-modulate = Color(0.588235, 0.588235, 0.588235, 1)
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-mouse_default_cursor_shape = 13
-texture_normal = ExtResource("26_to8qp")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
-modulate = Color(0.588235, 0.588235, 0.588235, 1)
-custom_minimum_size = Vector2(60, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 12
-text = "alpha"
-vertical_alignment = 1
-clip_text = true
-text_overrun_behavior = 1
-
-[node name="TypeIcon" type="TextureRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/LayerTag/MarginContainer"]
-modulate = Color(0.588235, 0.588235, 0.588235, 1)
-custom_minimum_size = Vector2(12, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-texture = ExtResource("29_suf26")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Contents" type="Control" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit"]
-layout_mode = 2
-
-[node name="ContentList" type="Control" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents"]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = -6.0
-offset_top = 4.0
-offset_right = -6.0
-offset_bottom = -16.0
-grow_vertical = 2
-
-[node name="Keyframe1" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents/ContentList" instance=ExtResource("61_w8x5g")]
-layout_mode = 0
-
-[node name="Keyframe2" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents/ContentList" instance=ExtResource("61_w8x5g")]
-layout_mode = 0
-offset_left = 120.0
-offset_right = 132.0
-
-[node name="Keyframe3" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer1Children/KeyframeLayer1/LayerTagSplit/Contents/ContentList" instance=ExtResource("61_w8x5g")]
-layout_mode = 0
-offset_left = 340.0
-offset_right = 352.0
-
-[node name="DragLine" type="ColorRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers"]
+[node name="DragLine" type="ColorRect" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/ScrollContainer/Layers"]
 visible = false
 custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 size_flags_vertical = 0
 color = Color(0.25098, 0.25098, 0.25098, 1)
 
-[node name="Layer2" type="Panel" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers"]
-custom_minimum_size = Vector2(100, 20)
+[node name="TimelineDrag" type="Control" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit"]
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_x62o7")
+script = ExtResource("63_aocmv")
 
-[node name="LayerTagSplit" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2"]
-clip_contents = true
+[node name="BG" type="Panel" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimelineDrag"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_as7su")
 
-[node name="LayerTag" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit"]
-z_index = 1
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
+[node name="Button" type="Button" parent="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimelineDrag"]
+layout_mode = 0
+offset_right = 275.0
+offset_bottom = 8.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_7f54y")
-theme_override_styles/hover = SubResource("StyleBoxFlat_bp0pc")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_t4clh")
-toggle_mode = true
+theme_override_styles/normal = SubResource("StyleBoxFlat_166vn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w4itc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cbrhy")
 
-[node name="MarginContainer" type="MarginContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/LayerTag"]
+[node name="Control" type="Control" parent="Content/TimelineSplitter/Timeline/DragSplit"]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+
+[node name="TimelineVerticalDrag" type="Control" parent="Content/TimelineSplitter/Timeline/DragSplit/Control"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 24.0
+offset_right = 8.0
+offset_bottom = -13.0
+grow_vertical = 2
+script = ExtResource("59_iqxj8")
+
+[node name="BG" type="Panel" parent="Content/TimelineSplitter/Timeline/DragSplit/Control/TimelineVerticalDrag"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_right = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_as7su")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/LayerTag/MarginContainer"]
-layout_mode = 2
-
-[node name="Control" type="Control" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Opener" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer/Control"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-offset_right = 16.0
+[node name="Button" type="Button" parent="Content/TimelineSplitter/Timeline/DragSplit/Control/TimelineVerticalDrag"]
+layout_mode = 0
+offset_right = 8.0
 offset_bottom = 20.0
-rotation = 3.14159
-pivot_offset = Vector2(8, 10)
-toggle_mode = true
-texture_normal = ExtResource("28_k3u27")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("56_vhmnd")
-
-[node name="Dragger" type="TextureButton" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-mouse_default_cursor_shape = 13
-texture_normal = ExtResource("26_to8qp")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 12
-text = "Music"
-vertical_alignment = 1
-clip_text = true
-text_overrun_behavior = 1
-
-[node name="TypeIcon" type="TextureRect" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/LayerTag/MarginContainer"]
-custom_minimum_size = Vector2(16, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-texture = ExtResource("3_vkvw2")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Contents" type="Control" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit"]
-layout_mode = 2
-
-[node name="ContentList" type="HBoxContainer" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/Contents"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -6.0
-offset_right = 36.0
-offset_bottom = 6.0
-grow_vertical = 2
-theme_override_constants/separation = 0
-
-[node name="Audio1" type="Button" parent="Content/TimelineSplitter/Timeline/MarginContainer/TimeSplit/ScrollContainer/Layers/Layer2/LayerTagSplit/Contents/ContentList"]
-modulate = Color(0.631373, 0.678431, 0.529412, 1)
-custom_minimum_size = Vector2(320, 0)
-layout_mode = 2
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_po4ot")
-theme_override_styles/hover = SubResource("StyleBoxFlat_w03kc")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yxg1l")
-toggle_mode = true
+theme_override_styles/normal = SubResource("StyleBoxFlat_166vn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w4itc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cbrhy")
 
 [node name="DebugBar" type="Panel" parent="Content"]
 custom_minimum_size = Vector2(0, 20)
@@ -2842,5 +2544,113 @@ text = "Render"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LayerAddPopup" type="Control" parent="PopupPanels/Popups"]
+visible = false
+custom_minimum_size = Vector2(420, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("67_70wx0")
+
+[node name="Panel" type="Panel" parent="PopupPanels/Popups/LayerAddPopup"]
+custom_minimum_size = Vector2(420, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t0gbp")
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupPanels/Popups/LayerAddPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Content" type="VBoxContainer" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="HBoxContainer" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content/Title"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_font_sizes/font_size = 12
+text = "Layer Settings"
+
+[node name="Exit" type="TextureButton" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content/Title"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+texture_normal = ExtResource("55_yocbj")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("14_ajthw")
+
+[node name="LayerName" type="LineEdit" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxFlat_uhagv")
+placeholder_text = "Name"
+
+[node name="TypeSelector" type="HBoxContainer" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content"]
+layout_mode = 2
+
+[node name="TypeButton" type="MenuButton" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content/TypeSelector"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.597656, 0.597656, 0.597656, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_c0wjs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f4df0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7qd1a")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0crrk")
+text = "Type >"
+flat = false
+
+[node name="TypeLabel" type="Label" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content/TypeSelector"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.694118, 0.694118, 0.694118, 1)
+theme_override_font_sizes/font_size = 12
+
+[node name="TypeColor" type="Panel" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content/TypeSelector"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c5jx0")
+
+[node name="AcceptButton" type="HBoxContainer" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content"]
+layout_mode = 2
+
+[node name="Accept" type="Button" parent="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content/AcceptButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(0.721569, 0.721569, 0.721569, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_cu7gv")
+text = "Accept"
+
 [connection signal="pressed" from="Content/TitleBar/MarginContainer/Centre/RenderBtn" to="Content/TitleBar" method="_on_render_btn_pressed"]
+[connection signal="mouse_entered" from="Content/TimelineSplitter/Timeline" to="Content/TimelineSplitter/Timeline" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Content/TimelineSplitter/Timeline" to="Content/TimelineSplitter/Timeline" method="_on_mouse_exited"]
+[connection signal="pressed" from="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimeBar/ControllContents/HBoxContainer/AddLayer" to="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit" method="_on_add_layer_pressed"]
 [connection signal="pressed" from="PopupPanels/Popups/RenderPopup/Panel/MarginContainer/Content/Head/Exit" to="PopupPanels/Popups/RenderPopup" method="_on_exit_pressed"]
+[connection signal="pressed" from="PopupPanels/Popups/LayerAddPopup/MarginContainer/Content/Title/Exit" to="PopupPanels/Popups/LayerAddPopup" method="_on_exit_pressed"]

@@ -215,7 +215,6 @@ func get_controller_value(controller_parent):
 func set_controller_value(controller_parent, value):
 	var ctrl = controller_parent.get_child(0)
 	if ctrl == null: return # TODO : Add error message
-	# TODO : imrpove error message handleing and show them in editor as popup
 	
 	if ctrl is DragController and [TYPE_INT, TYPE_FLOAT].has(typeof(value)):
 		ctrl.set_value(value)
@@ -226,7 +225,7 @@ func set_controller_value(controller_parent, value):
 	if ctrl is LineEdit and [TYPE_STRING].has(typeof(value)):
 		ctrl.text = value
 	
-	if ctrl is HBoxContainer and [TYPE_VECTOR2, TYPE_VECTOR2I, TYPE_VECTOR3, TYPE_VECTOR3I].has(typeof(value)): # TODO : Do this and next
+	if ctrl is HBoxContainer and [TYPE_VECTOR2, TYPE_VECTOR2I, TYPE_VECTOR3, TYPE_VECTOR3I].has(typeof(value)):
 		var values : Array = []
 		var is_int : bool = [TYPE_VECTOR2I, TYPE_VECTOR3I].has(typeof(value))
 		for cid in ctrl.get_children().size():
@@ -243,7 +242,6 @@ func set_controller_value(controller_parent, value):
 func connect_controller_to_value_changed(controller, function : Callable):
 	var ctrl = controller.get_child(0)
 	if ctrl == null: return # TODO : Add error message
-	# TODO : imrpove error message handleing and show them in editor as popup
 	
 	if ctrl is DragController:
 		ctrl.connect("value_changed", function)
@@ -254,7 +252,7 @@ func connect_controller_to_value_changed(controller, function : Callable):
 	if ctrl is LineEdit:
 		ctrl.connect("text_changed", function)
 	
-	if ctrl is HBoxContainer: # TODO : Do this and next
+	if ctrl is HBoxContainer:
 		for c in ctrl.get_children():
 			if not c is DragController: continue
 			

@@ -1,5 +1,8 @@
+res://ui/scene/video_editor/ui/node_controllers/popups
+res://ui/scene/video_editor/ui/node_controllers
 res://ui/scene/video_editor/ui/theme/instances
 res://classes/global/util
+res://classes/global/animation
 D:/DATA/Games/Anim8-Pro/project_files/files
 res://ui/scene/video_editor/ui/node_controllers/panel_controllers
 res://classes/global/project

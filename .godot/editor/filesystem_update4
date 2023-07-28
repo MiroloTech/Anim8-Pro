@@ -1,9 +1,12 @@
 res://ui/scene/video_editor/main/scene.tscn
 res://ui/scene/video_editor/ui/theme/dark.tres
-res://classes/timeline/layer/AnimLayer.gd
 res://ui/scene/video_editor/ui/theme/instances/layer.tscn
+res://ui/scene/video_editor/ui/node_controllers/TimelineDrag.gd
+res://classes/global/util/GLOBAL.gd
 res://classes/global/animation/LayerManager.gd
-res://classes/timeline/layer/audio/AnimAudio.gd
-res://classes/timeline/layer/video/AnimVideo.gd
-res://classes/timeline/layer/AnimClip.gd
-res://classes/timeline/layer/keyframe/AnimKeyframLayer.gd
+res://ui/scene/video_editor/ui/node_controllers/TimeBarController.gd
+res://ui/scene/video_editor/ui/node_controllers/Timeline.gd
+res://ui/scene/video_editor/ui/node_controllers/TimelineVerticalDrag.gd
+res://ui/scene/video_editor/ui/node_controllers/DebugBar.gd
+res://ui/scene/video_editor/ui/node_controllers/popups/LayerAddPopup.gd
+res://ui/scene/video_editor/ui/node_controllers/TextureButton.gd
