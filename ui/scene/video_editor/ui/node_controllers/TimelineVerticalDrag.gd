@@ -13,9 +13,11 @@ func _enter_tree():
 	GLOBAL.timeline_vertical_dragger = self
 
 func _process(delta):
+	layers.position.y = 0.0
+	layers.size.y = 0.0
 	# TODO : fix double movement in vertical scroll
 	
-	# pos = clampf(pos, 0.0, 1.0)
+	pos = clampf(pos, 0.0, 1.0)
 	# print(pos)
 	
 	#if button.button_pressed:
@@ -41,6 +43,7 @@ func _process(delta):
 	
 	# var zoom = 1.0 / (width / 250.0) # TODO : do zoom stuff
 	var max_width = layers.get_child_count() * ( 20.0 + layers.get("theme_override_constants/separation") )
+	max_width = 0.0 if max_width == NAN else max_width
 	# Set width from zoom
 	button.size.y = width
 	
@@ -50,18 +53,23 @@ func _process(delta):
 	
 	# Move dragger smoothly towards target
 	# print(target_pos)
+	target_pos = 0.0 if target_pos == NAN else target_pos
+	target_pos = max(target_pos, 0.0)
 	button.global_position.y = lerpf(button.global_position.y, target_pos, delta * GLOBAL.timeline_smoothing)
 	
 	# Set pos value
 	var min = global_position.y
-	var max = min + size.y - width
+	var max = max(min + (size.y - width) + 1.0, 1.0)
 	pos = (button.global_position.y - min) / (max - min)
 	if pos == -INF: pos = 0.0
 	
 	# Apply drag changes
 	# LAYER_MANAGER.rescale_clips(GLOBAL.timeline_zoom, GLOBAL.timeline_drag_pos)
 	
-	layers.position.y = -(pos * max_width)
+	var p = -(pos * max_width)
+	layers.position.y = p if p != NAN else 0.0
+	
+	shift(0)
 
 
 
@@ -74,7 +82,6 @@ func shift(offset : float):
 	
 	t = clampf(t, min, max)
 	target_pos = t
-	
 
 func set_pos(to : float):
 	pos = to

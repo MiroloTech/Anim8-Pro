@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb573fou0ay3f"]
+
+[ext_resource type="Script" path="res://temp/test/scenes/TEEEST.gd" id="1_fpu13"]
+
+[node name="Node" type="Node2D"]
+script = ExtResource("1_fpu13")

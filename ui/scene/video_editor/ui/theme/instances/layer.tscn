@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c0kxsnpf6bn13" path="res://ui/scene/video_editor/ui/icons/files/folder.png" id="4_u2ekm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5kv5"]
-bg_color = Color(0.160784, 0.160784, 0.160784, 1)
+bg_color = Color(0.105882, 0.105882, 0.105882, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -43,7 +43,6 @@ custom_minimum_size = Vector2(100, 20)
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
-size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x5kv5")
 
 [node name="LayerTagSplit" type="HBoxContainer" parent="."]
@@ -58,7 +57,7 @@ theme_override_constants/separation = 0
 
 [node name="LayerTag" type="Button" parent="LayerTagSplit"]
 z_index = 1
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_t16jj")
@@ -108,17 +107,17 @@ stretch_mode = 5
 [node name="Title" type="Label" parent="LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
 text = "..."
 vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 1
 
-[node name="TypeIcon" type="TextureRect" parent="LayerTagSplit/LayerTag/MarginContainer"]
+[node name="TypeIcon" type="TextureRect" parent="LayerTagSplit/LayerTag/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 texture = ExtResource("4_u2ekm")
 expand_mode = 1
 stretch_mode = 5

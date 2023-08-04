@@ -1,0 +1,190 @@
+[gd_scene load_steps=13 format=3 uid="uid://dvuk7dewwn7dl"]
+
+[ext_resource type="Texture2D" uid="uid://bsqjksh2desba" path="res://ui/scene/video_editor/ui/icons/popups/cross-small.png" id="1_fb8ar"]
+[ext_resource type="Script" path="res://ui/custom_components/editing/file_explorer.gd" id="1_x83vp"]
+[ext_resource type="Script" path="res://classes/global/ui/advanced_settings_selector.gd" id="2_g4hgd"]
+[ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TextureButton.gd" id="2_i4fub"]
+[ext_resource type="Texture2D" uid="uid://0o23t8wgsp0j" path="res://ui/scene/video_editor/ui/icons/menu/angle-small-down.png" id="3_oaitm"]
+[ext_resource type="Texture2D" uid="uid://bm5ocshi0u5a8" path="res://ui/scene/video_editor/ui/icons/menu/search.png" id="4_rckdh"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="6_5q7ss"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcsx1"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4iviw"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cl5wx"]
+bg_color = Color(0.222656, 0.222656, 0.222656, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t6tm"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g40j3"]
+bg_color = Color(0.222656, 0.222656, 0.222656, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="FileExplorer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x83vp")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1200, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcsx1")
+
+[node name="AdvancedSettings" type="Control" parent="Panel" node_paths=PackedStringArray("funcion_parents")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_g4hgd")
+funcion_parents = [NodePath("../..")]
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Content" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="HBoxContainer" parent="Panel/MarginContainer/Content"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/Content/Title"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.658824, 0.658824, 0.658824, 1)
+text = "Select a File"
+
+[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Content/Title"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+texture_normal = ExtResource("1_fb8ar")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_i4fub")
+
+[node name="Controls" type="HBoxContainer" parent="Panel/MarginContainer/Content"]
+layout_mode = 2
+
+[node name="Back" type="TextureButton" parent="Panel/MarginContainer/Content/Controls"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_oaitm")
+ignore_texture_size = true
+stretch_mode = 5
+flip_v = true
+
+[node name="FilePath" type="LineEdit" parent="Panel/MarginContainer/Content/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.458824, 0.458824, 0.458824, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxFlat_4iviw")
+
+[node name="SearchBar" type="Control" parent="Panel/MarginContainer/Content/Controls"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer/Content/Controls/SearchBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cl5wx")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/Content/Controls/SearchBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="Content" type="HBoxContainer" parent="Panel/MarginContainer/Content/Controls/SearchBar/MarginContainer"]
+layout_mode = 2
+
+[node name="SearchGlass" type="TextureRect" parent="Panel/MarginContainer/Content/Controls/SearchBar/MarginContainer/Content"]
+modulate = Color(0.345098, 0.345098, 0.345098, 1)
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+texture = ExtResource("4_rckdh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LineEdit" type="LineEdit" parent="Panel/MarginContainer/Content/Controls/SearchBar/MarginContainer/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.411765, 0.411765, 0.411765, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxFlat_0t6tm")
+flat = true
+
+[node name="Files" type="Control" parent="Panel/MarginContainer/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/Content/Files"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_5q7ss")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Content/Files/SmoothScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AcceptBtns" type="HBoxContainer" parent="Panel/MarginContainer/Content"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/Content/AcceptBtns"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_g40j3")
+text = "Select"
+
+[connection signal="pressed" from="Panel/MarginContainer/Content/Title/TextureButton" to="." method="exit"]
+[connection signal="pressed" from="Panel/MarginContainer/Content/Controls/Back" to="." method="back"]
+[connection signal="text_submitted" from="Panel/MarginContainer/Content/Controls/FilePath" to="." method="_on_file_path_text_submitted"]

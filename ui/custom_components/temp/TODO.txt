@@ -1,0 +1,27 @@
+AI : 
+	Animation Exaduration
+	Voice generation
+	Noise filter
+	...
+
+Plan : 
+	Add propper touch screen support
+	Add 3D Support
+
+Next Task : 
+	Show all imported items in File Panel
+	Add Timeline Layer Moving and function
+	Set time at preview based on max timeline length and the current real-time caret position
+
+Small fixes : 
+	
+
+
+
+On hold : 
+	Make right click menu popup and a custom popup widget if the method has arguments
+
+Done : 
+	Add custom file dialog widget
+	
+	Update custom scroll bars when resizing window

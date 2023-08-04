@@ -12,7 +12,7 @@ func _process(delta):
 	# if target_pos == 0.0:
 	# 	target_pos = global_position.x
 	
-	pos = clampf(pos, 0.0, 1.0)
+	# pos = clampf(pos, 0.0, 1.0)
 	
 	#if button.button_pressed:
 	#	move_dragger_to(get_global_mouse_position().x)
@@ -30,8 +30,6 @@ func _process(delta):
 	else:
 		dragging = false
 		can_drag = false
-	
-	
 	
 	
 	# var zoom = 1.0 / (width / 250.0) # TODO : do zoom stuff
@@ -54,8 +52,7 @@ func _process(delta):
 	if pos == -INF: pos = 0.0
 	
 	# Apply drag changes
-	LAYER_MANAGER.rescale_clips(GLOBAL.timeline_zoom, GLOBAL.timeline_drag_pos)
-
+	LAYER_MANAGER.rescale_clips(GLOBAL.timeline_zoom, GLOBAL.timeline_drag_pos) #this might be a problem
 
 func move_dragger_to(to : float):
 	var click_pos = to - (width / 2.0)
@@ -66,3 +63,8 @@ func move_dragger_to(to : float):
 	var target = clampf(click_pos, min, max)
 	target_pos = target
 
+
+
+func _on_resized():
+	# move_dragger_to()
+	pass

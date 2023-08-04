@@ -28,12 +28,20 @@ func add_layer(type : GLOBAL.LAYER_TYPE, tag : String = "unnamed", pos : int = -
 	# layer.make_layer_ui()
 	layer.ui_data = LAYER_DATA[layer_type_str]
 	layer.make_layer_ui()
+	
+	# Fix transform errors
+	# ....
+	
+	# Add to global
 	layers.append(layer)
 	
 	timeline.add_child(layer.ui)
+	layer.ui.force_update_transform()
 	
 	if pos != -1:
 		timeline.move_child(layer.ui, pos)
+	
+	print("Layer added : " + str(tag))
 	
 	return layer
 	# pass # Add UI for new Layer, and add Layer to list
@@ -62,10 +70,12 @@ func rescale_clips(scale : float, offset : float):
 			s += c.length
 		max_scroll = max(max_scroll, s)
 	
+	# """
 	for l in layers:
 		for c in l.clips:
 			c.ui_rescale(scale)
 		l.shift(offset * max_scroll)
+	# """
 
 func get_max_layer_width() -> float:
 	var max_scroll = 0.0

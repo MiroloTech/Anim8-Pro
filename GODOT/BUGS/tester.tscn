@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm42hhr4luukx"]
+
+[ext_resource type="Script" path="res://GODOT/BUGS/tester.gd" id="1_lcc70"]
+
+[node name="tester" type="Node"]
+script = ExtResource("1_lcc70")

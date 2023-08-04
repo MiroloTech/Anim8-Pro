@@ -1,5 +1,9 @@
 extends Node
 
+# TODO : Test video conversion with new ffmpeg implementation
+# TODO : Add touch screen support
+# TODO : Improve Laptop support
+
 var SUPPORTED_FILE_TYPES = [
 	"MP4",
 	"AVI",
@@ -15,13 +19,43 @@ var SUPPORTED_FILE_TYPES = [
 ]
 
 var local_project_path = "res://project_files/files/"
+var ffmpeg_path = "C:/Users/liams/OneDrive/Desktop/App/ffmpeg-6.0-full_build/bin/" # TODO : Save this path externally
+
+var is_valid : bool = false
+
+# Executes a function in the command prompt
+func cmd(command : Array[String]):
+	var out = []
+	var c = command.duplicate()
+	c.push_front("/C")
+	var err = OS.execute("CMD.exe", c, out, false, false)
+	return {"out" : out, "err" : err}
+
+func ffmpeg(command : String):
+	return cmd([ffmpeg_path + "ffmpeg " + command])
 
 func test():
-	var out = []
-	OS.execute("ffmpeg", ["-version"], out)
-	for l in out: print(l)
+	print("Tests running...")
+	
+	var test = ffmpeg("-version")
+	var err = test.err
+	var out_arr = test.out
+	
+	print(test)
+	
+	var out = ""
+	for l in out_arr.size() - 1: out += l + "\n"
+	out += out_arr[out_arr.size()-1]
+	
+	# print("FFMPEG Error ?= " + str(err))
 	
 	# conv("D:/DATA/Games/Anim8-Pro/test/GaryBurp.ogv", "JPG")
+	# conv("C:/Users/liams/OneDrive/Dokumente/Anim8-Pro/Anim8-Pro/test/GaryBurp.ogv", "JPG")
+	
+	if err == -1 or out == "": # TODO : add more suffisticated error handeling
+		INSTBUS.popup_manager.queue_popup("ffmpegErrorPopup")
+	else:
+		is_valid = true
 
 # Converts file to specific type using ffmpeg
 func conv(global_path : String, end_type : String):
@@ -45,12 +79,12 @@ func conv(global_path : String, end_type : String):
 		# convert to Image sequence
 		var end_path = '"' + path + "/" + file_name + ".frames/out-%03d." + end_type.to_lower() + '"'
 		DirAccess.make_dir_absolute(path + "/" + file_name + ".frames")
-		OS.execute("ffmpeg", ["-i", '"' + global_path + '"', end_path], out)
+		out = ffmpeg('-i "' + global_path + '" ' + end_path).out
 	
 	else:
 		# Convert to video
 		var end_path = path + "/" + file_name + "." + end_type.to_lower()
-		OS.execute("ffmpeg", ["-i", global_path, end_path], out)
+		out = ffmpeg("-i " + global_path + " " + end_path).out
 	
 	for l in out: print(l)
 	
@@ -67,8 +101,7 @@ func change_speed(local_path : String, new_fps : int) -> String: # Broken
 	var end_path = path + "/" + file_name + "-" + str(new_fps) + "fps" + "." + file_type
 	print(end_path)
 	
-	var out = []
-	OS.execute("ffmpeg", ["-i " + global_path, "-crf 10", "filter:v " + "tblend" + " -r " + str(new_fps), end_path], out)
+	var out = ffmpeg("-i " + global_path + " -crf 10 filter:v tblend -r " + str(new_fps) + " " + end_path).out
 	for l in out: print(l)
 	
 	return end_path
