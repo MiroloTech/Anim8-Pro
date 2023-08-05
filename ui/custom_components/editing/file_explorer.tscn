@@ -188,3 +188,4 @@ text = "Select"
 [connection signal="pressed" from="Panel/MarginContainer/Content/Title/TextureButton" to="." method="exit"]
 [connection signal="pressed" from="Panel/MarginContainer/Content/Controls/Back" to="." method="back"]
 [connection signal="text_submitted" from="Panel/MarginContainer/Content/Controls/FilePath" to="." method="_on_file_path_text_submitted"]
+[connection signal="pressed" from="Panel/MarginContainer/Content/AcceptBtns/Button" to="." method="_on_select_btn_pressed"]

@@ -1,5 +1,7 @@
 extends Node
 
+var project_path = "res://classes/global/project/pjinfo-video_test.json"
+
 # all layer lypes
 enum LAYER_TYPE {
 	VIDEO,      # Video ( Collage of Frames )

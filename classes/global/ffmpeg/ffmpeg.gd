@@ -18,8 +18,10 @@ var SUPPORTED_FILE_TYPES = [
 	# "TXT"
 ]
 
-var local_project_path = "res://project_files/files/"
-var ffmpeg_path = "C:/Users/liams/OneDrive/Desktop/App/ffmpeg-6.0-full_build/bin/" # TODO : Save this path externally
+var local_project_path = "C:/Users/liams/Desktop/test_project"
+var ffmpeg_path = "C:/Users/liams/Desktop/App/ffmpeg-6.0-full_build/bin/" # TODO : Save this path externally
+
+var imported_resources : Array[String] = []
 
 var is_valid : bool = false
 
@@ -50,7 +52,7 @@ func test():
 	# print("FFMPEG Error ?= " + str(err))
 	
 	# conv("D:/DATA/Games/Anim8-Pro/test/GaryBurp.ogv", "JPG")
-	# conv("C:/Users/liams/OneDrive/Dokumente/Anim8-Pro/Anim8-Pro/test/GaryBurp.ogv", "JPG")
+	# conv("C:/Users/liams/Dokumente/Anim8-Pro/Anim8-Pro/test/GaryBurp.ogv", "JPG")
 	
 	if err == -1 or out == "": # TODO : add more suffisticated error handeling
 		INSTBUS.popup_manager.queue_popup("ffmpegErrorPopup")
@@ -58,8 +60,8 @@ func test():
 		is_valid = true
 
 # Converts file to specific type using ffmpeg
-func conv(global_path : String, end_type : String):
-	if not SUPPORTED_FILE_TYPES.has(end_type): push_error("Tried to convert file <" + global_path + "> to unsupported file type <" + end_type + "> ..."); return true
+func conv(global_path : String, end_type : String, custom_end_path : String = ""):
+	if not SUPPORTED_FILE_TYPES.has(end_type): push_error("Tried to convert file <" + global_path + "> to unsupported file type <" + end_type + "> ..."); return ""
 	var out = []
 	
 	# Split path between path and file name
@@ -75,20 +77,43 @@ func conv(global_path : String, end_type : String):
 	# OS.execute("cd", [path], out)
 	
 	# Switch between file types
+	print(global_path + " : read as input path for FFMPEG conversion")
+	var p = custom_end_path if custom_end_path != "" else path
+	
+	if not p.ends_with("/"): p += "/"
+	
+	"""
+	C:/Users/liams/Downloads/production_id 4074364 (720p).mp4 : Path selected
+	C:/Users/liams/Downloads/production_id 4074364 (720p).mp4 : read as input path for FFMPEG conversion
+	End Path : "C:/Users/liams/Desktop/test_project/production_id 4074364 (720p).frames/out-%03d.png"
+	ffmpeg -i "C:/Users/liams/Downloads/production_id 4074364 (720p).mp4" "C:/Users/liams/Desktop/test_project/production_id 4074364 (720p).frames/out-%03d.png"
+	Conversion data : 
+	cmd
+	File : < C:/Users/liams/Downloads/production_id 4074364 (720p).mp4 > stored in local project folder...
+	"""
+	
+	var target_path = p + file_name + ".frames"
+	
 	if end_type == "PNG" or end_type == "JPG": # HDT : add .webp
 		# convert to Image sequence
-		var end_path = '"' + path + "/" + file_name + ".frames/out-%03d." + end_type.to_lower() + '"'
-		DirAccess.make_dir_absolute(path + "/" + file_name + ".frames")
-		out = ffmpeg('-i "' + global_path + '" ' + end_path).out
+		var end_path = p + file_name + ".frames/out-%05d." + end_type.to_lower()
+		print("End Path : " + end_path)
+		DirAccess.make_dir_absolute(target_path)
+		# print("Error code while creating directory .frames : " + str(dir_err))
+		var cmd = '-i ' + '"'+global_path+'"' + ' ' + "-pix_fmt rgba " + '"'+end_path+'"' # FIXME : fix end paths to project files
+		print("ffmpeg " + cmd)
+		out = ffmpeg(cmd).out
 	
 	else:
 		# Convert to video
-		var end_path = path + "/" + file_name + "." + end_type.to_lower()
+		var end_path = p + "/" + file_name + "." + end_type.to_lower()
+		target_path = end_path
 		out = ffmpeg("-i " + global_path + " " + end_path).out
 	
+	print("Conversion data : ")
 	for l in out: print(l)
 	
-	return false
+	return target_path
 
 func change_speed(local_path : String, new_fps : int) -> String: # Broken
 	var global_path : String = ProjectSettings.globalize_path(local_path)
@@ -125,6 +150,8 @@ func import(path : String):
 	new_file.store_string(data)
 	new_file.close()
 	"""
+	
+	return conv(path, "PNG", local_project_path)
 	
 	# Use FFMPEG conversion with - i and -o to move files and simultainioulsy convert to image sequence
 	

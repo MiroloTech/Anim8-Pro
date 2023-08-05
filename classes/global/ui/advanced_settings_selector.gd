@@ -115,7 +115,7 @@ func manage_calls():
 		var btn = b[0]
 		var parent = b[1]
 		var method_data = b[2]
-		if btn.button_pressed: # FIXME : Pressed calls multiple times
+		if btn.button_pressed:
 			var call = Callable(parent, btn.name)
 			# Popup Custom Mennu for arguments here, if at least one argument is epected
 			if method_data.args.size() == 0:

@@ -1,9 +1,1 @@
-{
-	"name" : "video_test",
-	"frame_count" : 469,
-	"file_type" : ".mp4",
-	"fps" : 60,
-	"aspect_ratio" : "16 : 9",
-	"upscaling" : 1.0,
-	"resolution" : "1080p"
-}
+{ "name": "video_test", "frame_count": 469, "file_type": ".mp4", "fps": 60, "aspect_ratio": "16 : 9", "upscaling": 1, "resolution": "1080p", "resources": ["C:/Users/liams/Desktop/test_project/pexels-artem-podrez-6824326 (2160p).frames", "C:/Users/liams/Desktop/test_project/production_id 4074364 (720p).frames"] }

@@ -3,6 +3,7 @@ extends Control
 @onready var button_list = $Panel/MarginContainer/Content/Files/SmoothScrollContainer/VBoxContainer
 @onready var title_dir_edit = $Panel/MarginContainer/Content/Controls/FilePath
 @onready var search_bar = $Panel/MarginContainer/Content/Controls/SearchBar/MarginContainer/Content/LineEdit
+@onready var select_btn = $Panel/MarginContainer/Content/AcceptBtns/Button
 
 var current_path : String = ""
 var file_buttons : Array[FileBtn] = []
@@ -11,6 +12,7 @@ const DOUBLECLICK_TIME = 0.35
 
 class FileBtn:
 	var id : int = 0
+	var path : String = ""
 	var tag : String = "..."
 	var type : String = ""
 	var icon : Image = null
@@ -19,9 +21,10 @@ class FileBtn:
 	
 	var ui : Control = null
 	
-	func _init(tag : String, type : String = "_", id : int = -1):
+	func _init(tag : String, type : String = "_", path : String = "", id : int = -1):
 		self.id = id
 		self.tag = tag
+		self.path = path
 		self.type = type if GLOBAL.FILE_TYPE.has(type) else "null"
 		self.icon = Image.load_from_file(GLOBAL.FILE_TYPE[self.type][0])
 		
@@ -53,7 +56,6 @@ class FileBtn:
 		clicks += 1
 
 
-
 # Test function, starts once at start of program
 func _ready():
 	current_path = "res://ui/scene/video_editor/test/"
@@ -81,6 +83,8 @@ func load_items_from_path(path : String) -> void:
 	
 	# if not is_path_valid(path): print("ERROR : Tried to open an invalid path in file explorer..."); return
 	
+	if not path.ends_with("/"): path += "/"
+	
 	var dir = DirAccess.open(path) # TODO : fix errer when going back from  /ui/  folder
 	
 	if dir:
@@ -89,7 +93,7 @@ func load_items_from_path(path : String) -> void:
 		while file_name != "":
 			var splitted_name = file_name.rsplit(".", true, 1)
 			var type = "_" if dir.current_is_dir() else (splitted_name[1] if splitted_name.size() > 1 else "null")
-			var file = FileBtn.new(file_name, type)
+			var file = FileBtn.new(file_name, type, path + file_name)
 			
 			button_list.add_child(file.ui)
 			file_buttons.append(file)
@@ -104,8 +108,7 @@ func load_items_from_path(path : String) -> void:
 
 # sets path back one step and reloads the visual explorer
 func back() -> void:
-	print(current_path)
-	var last_part = "/" + current_path.rsplit("/", false, 1)[1]
+	var last_part = current_path.rsplit("/", false, 1)[1] + "/"
 	current_path = current_path.replace(last_part, "")
 	load_items_from_path(current_path)
 
@@ -129,6 +132,7 @@ func get_double_clicked():
 # loads button items based on entered path
 func go_to_path(path : String) -> void:
 	current_path = path
+	if not current_path.ends_with("/"): current_path += "/"
 	load_items_from_path(path)
 
 # returns the button id if a file or directory has been opened / selected
@@ -188,9 +192,13 @@ func _on_file_path_text_submitted(new_text : String):
 	if not is_path_valid(new_text): print("ERROR : The path you entered is invalid"); return
 	
 	current_path = new_text
+	if not current_path.ends_with("/"): current_path += "/"
 	# if current_path.ends_with("/"): current_path.replace() += "/" # Unify Path
 	load_items_from_path(current_path)
 	title_dir_edit.release_focus()
 
 func exit():
+	hide()
+
+func _on_select_btn_pressed():
 	hide()

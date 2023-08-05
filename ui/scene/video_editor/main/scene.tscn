@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://bybhd73u5gjx6"]
+[gd_scene load_steps=135 format=3 uid="uid://bybhd73u5gjx6"]
 
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/main.gd" id="1_da1mc"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/TitleBar.gd" id="2_k15k8"]
@@ -68,6 +68,7 @@
 [ext_resource type="FontFile" uid="uid://dmqfh7jouq8ck" path="res://ui/scene/video_editor/ui/fonts/Rubik/static/Rubik-Medium.ttf" id="66_bkev6"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/popups/LayerAddPopup.gd" id="67_n0vn0"]
 [ext_resource type="Script" path="res://ui/scene/video_editor/ui/node_controllers/popups/ffmpegErrorPopup.gd" id="68_tfjmu"]
+[ext_resource type="PackedScene" uid="uid://dvuk7dewwn7dl" path="res://ui/custom_components/editing/file_explorer.tscn" id="69_fgtdw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtk05"]
 bg_color = Color(0.211765, 0.211765, 0.211765, 1)
@@ -134,8 +135,8 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve50h"]
-bg_color = Color(0.215686, 0.215686, 0.215686, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqkej"]
+bg_color = Color(0.286275, 0.286275, 0.286275, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -677,6 +678,7 @@ placeholder_text = "Search here..."
 flat = true
 
 [node name="ThemeSwitch" type="HBoxContainer" parent="Content/TitleBar/MarginContainer/Right"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 10
 
@@ -949,19 +951,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("30_gr1de")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files"]
+[node name="Content" type="VBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ControlHeader" type="HBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/Content"]
+layout_mode = 2
+
+[node name="AddFileBtn" type="Button" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/Content/ControlHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_font_sizes/font_size = 12
+text = "Add File"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/Content"]
+layout_mode = 2
+size_flags_vertical = 3
 horizontal_scroll_mode = 0
 script = ExtResource("27_p36yu")
 speed = 8.0
 allow_horizontal_scroll = false
 
-[node name="GridContainer" type="GridContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/Content/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -969,314 +985,10 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 8
 script = ExtResource("31_unclq")
-media_size = 80
-
-[node name="Panel" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel2" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel3" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel4" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel5" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel6" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel7" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel8" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel9" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel10" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel11" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel12" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel13" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel14" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel15" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel16" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel17" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel18" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel19" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel20" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel21" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel22" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel23" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel24" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel25" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel26" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel27" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel28" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel29" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel30" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel31" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel32" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel33" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel34" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel35" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel36" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel37" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel38" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel39" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel40" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel41" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel42" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel43" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel44" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel45" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel46" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel47" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel48" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel49" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel50" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel51" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel52" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel53" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel54" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel55" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel56" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel57" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel58" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel59" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel60" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
-
-[node name="Panel61" type="Panel" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ve50h")
+panel_style = SubResource("StyleBoxFlat_hqkej")
 
 [node name="DragAndDropContainer" type="ColorRect" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1285,7 +997,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.623529)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/DragAndDropContainer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1294,7 +1006,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Plus" type="TextureRect" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/VBoxContainer"]
+[node name="Plus" type="TextureRect" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/DragAndDropContainer/VBoxContainer"]
 self_modulate = Color(0.537255, 0.537255, 0.537255, 1)
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
@@ -1302,7 +1014,7 @@ texture = ExtResource("32_jo7fa")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/VBoxContainer"]
+[node name="Label" type="Label" parent="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/DragAndDropContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
 text = "Drag File here"
@@ -2267,6 +1979,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 24.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.054902, 0.054902, 0.054902, 0.847059)
@@ -2298,6 +2012,9 @@ grow_vertical = 2
 script = ExtResource("62_g4i86")
 
 [node name="Panel" type="Panel" parent="PopupPanels/Popups/RenderPopup"]
+editor_description = "Hold Button to Render...
+
+TODO : Fix me"
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2854,7 +2571,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_y6364")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_lpg4v")
 text = "Locate"
 
+[node name="FileExplorer" parent="PopupPanels/Popups" instance=ExtResource("69_fgtdw")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="Content/TitleBar/MarginContainer/Centre/RenderBtn" to="Content/TitleBar" method="_on_render_btn_pressed"]
+[connection signal="pressed" from="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files/Content/ControlHeader/AddFileBtn" to="Content/TimelineSplitter/ActionEditor/WindowSplitter/Resourcer/MarginContainer/Contents/InspectorPanels/Files" method="_on_add_file_btn_pressed"]
 [connection signal="mouse_entered" from="Content/TimelineSplitter/Timeline" to="Content/TimelineSplitter/Timeline" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Content/TimelineSplitter/Timeline" to="Content/TimelineSplitter/Timeline" method="_on_mouse_exited"]
 [connection signal="pressed" from="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit/TimeBar/Content/LayerControl/ControllContents/HBoxContainer/AddLayer" to="Content/TimelineSplitter/Timeline/DragSplit/MarginContainer/TimeSplit" method="_on_add_layer_pressed"]

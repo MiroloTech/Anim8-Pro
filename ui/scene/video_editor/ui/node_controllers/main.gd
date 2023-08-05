@@ -4,7 +4,7 @@ extends Control
 # Runs once at start
 func _ready():
 	# load .json project file
-	PROJECTINFO.load_project("res://classes/global/project/pjinfo-video_test.json")
+	pass
 
 # Runs every frame
 func _process(_delta):
@@ -18,3 +18,6 @@ func make_screenshot():
 	image.save_png("res://screenshots/screenshot-" + str(randi() % 999) + ".png")
 	print("screenshot taken")
 
+
+
+# FIXME : open threads eating all the performance
